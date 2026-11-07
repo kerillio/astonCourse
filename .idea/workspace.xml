@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="file refactor">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="dd64449f-525f-4327-ae3a-2e153344ecce" value="" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kerillio&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kerillio/astonCourse&quot;,
+    &quot;accountId&quot;: &quot;4949379b-87b1-4c6d-b96b-ec670da09464&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;kerillio&quot;,
+    &quot;repository&quot;: &quot;astonCourse&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.3275983618130054" />
+      <entry key="MS500" value="1.871574714885003" />
+      <entry key="S2" value="4.137070812194267" />
+      <entry key="S5" value="8.14414975799033" />
+      <entry key="S10" value="11.374878867582503" />
+      <entry key="S30" value="14.84965572023868" />
+      <entry key="S60" value="16.36132985082135" />
+      <entry key="M2" value="17.668795150226074" />
+      <entry key="M5" value="18.883605797176692" />
+      <entry key="M10" value="19.403881050867774" />
+      <entry key="M15" value="19.593858735531864" />
+      <entry key="M30" value="20.002845231886425" />
+      <entry key="H1" value="26.716460929426887" />
+      <entry key="H2" value="66.59807914373464" />
+      <entry key="H4" value="153.4757505993307" />
+      <entry key="D1" value="365.88154698063187" />
+      <entry key="W1" value="430.90734781692606" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="1.3656376131895927E-157" />
+      <entry key="S60" value="5.3629171569489285E-79" />
+      <entry key="M2" value="1.3595688244332101E-39" />
+      <entry key="M5" value="1.0278068298829043E-15" />
+      <entry key="M10" value="1.2358405883680026E-7" />
+      <entry key="M15" value="6.923822645239464E-5" />
+      <entry key="M30" value="0.052519535910874306" />
+      <entry key="H1" value="2.0834062685784156" />
+      <entry key="H2" value="15.891560992774657" />
+      <entry key="H4" value="47.32239157043927" />
+      <entry key="D1" value="124.32184453322344" />
+      <entry key="W1" value="147.67082880396683" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.2823754878962934" />
+      <entry key="MS500" value="1.8586497942850544" />
+      <entry key="S2" value="4.130158075488524" />
+      <entry key="S5" value="8.138914058892208" />
+      <entry key="S10" value="11.371265569682024" />
+      <entry key="S30" value="14.846192571684874" />
+      <entry key="S60" value="16.35500877662971" />
+      <entry key="M2" value="17.661770887237683" />
+      <entry key="M5" value="18.87896403466488" />
+      <entry key="M10" value="19.40113081837831" />
+      <entry key="M15" value="19.59198682551963" />
+      <entry key="M30" value="20.054200355388325" />
+      <entry key="H1" value="28.79679883491409" />
+      <entry key="H2" value="82.48025018552376" />
+      <entry key="H4" value="200.78490575388926" />
+      <entry key="D1" value="490.1977916587203" />
+      <entry key="W1" value="578.5772308796736" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3LeMBT0G4aUAtCo6l0WLBuJURnW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "Step2.SQL__userDB",
+    "git.auto.fetch.suggestion.counter": "2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.Main" />
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="" />
+      <created>1793809973636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793809973636</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rebuild in Maven" />
+    <MESSAGE value="file refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="file refactor" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
