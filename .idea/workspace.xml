@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="file refactor">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="file refactor 2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/astonCourse.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -75,61 +68,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3275983618130054" />
-      <entry key="MS500" value="1.871574714885003" />
-      <entry key="S2" value="4.137070812194267" />
-      <entry key="S5" value="8.14414975799033" />
-      <entry key="S10" value="11.374878867582503" />
-      <entry key="S30" value="14.84965572023868" />
-      <entry key="S60" value="16.36132985082135" />
-      <entry key="M2" value="17.668795150226074" />
-      <entry key="M5" value="18.883605797176692" />
-      <entry key="M10" value="19.403881050867774" />
-      <entry key="M15" value="19.593858735531864" />
-      <entry key="M30" value="20.002845231886425" />
-      <entry key="H1" value="26.716460929426887" />
-      <entry key="H2" value="66.59807914373464" />
-      <entry key="H4" value="153.4757505993307" />
-      <entry key="D1" value="365.88154698063187" />
-      <entry key="W1" value="430.90734781692606" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000000357" />
+      <entry key="S5" value="1.0000079461822855" />
+      <entry key="S10" value="1.0048676582115252" />
+      <entry key="S30" value="1.352407241319493" />
+      <entry key="S60" value="2.077245585143351" />
+      <entry key="M2" value="3.8263793873771164" />
+      <entry key="M5" value="11.387575020827779" />
+      <entry key="M10" value="22.955014306754816" />
+      <entry key="M15" value="33.005760068161" />
+      <entry key="M30" value="56.2156091919529" />
+      <entry key="H1" value="81.39802214866424" />
+      <entry key="H2" value="101.26249813563669" />
+      <entry key="H4" value="115.35801246758054" />
+      <entry key="D1" value="300.8151096610513" />
+      <entry key="W1" value="536.3722794838307" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.3656376131895927E-157" />
-      <entry key="S60" value="5.3629171569489285E-79" />
-      <entry key="M2" value="1.3595688244332101E-39" />
-      <entry key="M5" value="1.0278068298829043E-15" />
-      <entry key="M10" value="1.2358405883680026E-7" />
-      <entry key="M15" value="6.923822645239464E-5" />
-      <entry key="M30" value="0.052519535910874306" />
-      <entry key="H1" value="2.0834062685784156" />
-      <entry key="H2" value="15.891560992774657" />
-      <entry key="H4" value="47.32239157043927" />
-      <entry key="D1" value="124.32184453322344" />
-      <entry key="W1" value="147.67082880396683" />
+      <entry key="MS100" value="5.736201195258297E-249" />
+      <entry key="MS500" value="2.2489739639613717E-50" />
+      <entry key="S2" value="4.4774070973886534E-13" />
+      <entry key="S5" value="1.6005712494965493E-5" />
+      <entry key="S10" value="0.005564992176002492" />
+      <entry key="S30" value="0.28030407392590884" />
+      <entry key="S60" value="0.776235450676696" />
+      <entry key="M2" value="1.940844732684722" />
+      <entry key="M5" value="7.876619773465399" />
+      <entry key="M10" value="18.07758187849875" />
+      <entry key="M15" value="26.537528631541548" />
+      <entry key="M30" value="43.60882100896811" />
+      <entry key="H1" value="59.75022646121386" />
+      <entry key="H2" value="71.50315111334017" />
+      <entry key="H4" value="79.33054667190201" />
+      <entry key="D1" value="152.3992382757794" />
+      <entry key="W1" value="240.70109839941765" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2823754878962934" />
-      <entry key="MS500" value="1.8586497942850544" />
-      <entry key="S2" value="4.130158075488524" />
-      <entry key="S5" value="8.138914058892208" />
-      <entry key="S10" value="11.371265569682024" />
-      <entry key="S30" value="14.846192571684874" />
-      <entry key="S60" value="16.35500877662971" />
-      <entry key="M2" value="17.661770887237683" />
-      <entry key="M5" value="18.87896403466488" />
-      <entry key="M10" value="19.40113081837831" />
-      <entry key="M15" value="19.59198682551963" />
-      <entry key="M30" value="20.054200355388325" />
-      <entry key="H1" value="28.79679883491409" />
-      <entry key="H2" value="82.48025018552376" />
-      <entry key="H4" value="200.78490575388926" />
-      <entry key="D1" value="490.1977916587203" />
-      <entry key="W1" value="578.5772308796736" />
+      <entry key="MS100" value="0.0011063319192341778" />
+      <entry key="MS500" value="0.25631680947214847" />
+      <entry key="S2" value="0.7115317306176464" />
+      <entry key="S5" value="0.8727462123037826" />
+      <entry key="S10" value="0.9438909483867371" />
+      <entry key="S30" value="1.5954797893997898" />
+      <entry key="S60" value="2.8205737822355577" />
+      <entry key="M2" value="5.7328755276421814" />
+      <entry key="M5" value="19.212595634180023" />
+      <entry key="M10" value="40.97054948810363" />
+      <entry key="M15" value="59.480205464163966" />
+      <entry key="M30" value="99.76964290465283" />
+      <entry key="H1" value="141.10941707890245" />
+      <entry key="H2" value="172.7419929818387" />
+      <entry key="H4" value="194.6752871425219" />
+      <entry key="D1" value="453.2092081758537" />
+      <entry key="W1" value="777.0721163147876" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -160,11 +153,15 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
+    "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -195,8 +192,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
       </set>
     </attachedChunks>
   </component>
@@ -213,10 +210,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rebuild in Maven" />
     <MESSAGE value="file refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="file refactor" />
+    <MESSAGE value="file refactor 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="file refactor 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

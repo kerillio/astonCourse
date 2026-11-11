@@ -6,12 +6,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateSessionFactoryUtil {
-    private static SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory = buildSessionFactory();
 
     private HibernateSessionFactoryUtil() {}
 
-    public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
+    public static SessionFactory buildSessionFactory() {
             try {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(User.class);
@@ -20,8 +19,19 @@ public class HibernateSessionFactoryUtil {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+        return sessionFactory;
+    }
+
+    public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            sessionFactory = buildSessionFactory();
         }
         return sessionFactory;
+    }
+
+    public static void shutdown() {
+        sessionFactory.close();
     }
 
 

@@ -44,6 +44,19 @@
             <artifactId>postgresql</artifactId>
             <version>42.7.14</version>
         </dependency>
+        <!-- Фасад логирования SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
+        <!-- Реализация Logback (включает классический логгер) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.6</version>
+        </dependency>
     </dependencies>
 
 </project>

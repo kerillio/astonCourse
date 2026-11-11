@@ -1,152 +1,79 @@
 package Step2.Module2.Service;
 
-
+import Step2.Module2.DAO.UserDao;
+import Step2.Module2.DAO.UserDaoImpl;
 import Step2.Module2.Models.User;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class UserService {
 
-    public UserService() {    }
+    private static UserDaoImpl userDao = new UserDaoImpl();
+
+    public UserService() {
+    }
 
     public User getUser() {
         return new User();
     }
 
     public static void addUser(User user) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(user);
-            entityManager.getTransaction().commit();
-            System.out.println("User added successfully");
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            entityManager.getTransaction().rollback();
-
-        } finally {
-            entityManager.close();
+        if (user.getName().isEmpty()) {
+            System.out.printf("Name is empty");
+        } else if (user.getAge() < 0) {
+            System.out.printf("Age is incorrect");
+        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
+            System.out.printf("Email is incorrect");
+        } else {
+            userDao.save(user);
         }
+
     }
 
     public static void updateUser (User user) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        String query = "update User"
-                + " set email = :email,"
-                + " name = :name,"
-                + " age = :age"
-                + " where id = :id";
-
-        try {
-            entityManager.getTransaction().begin();
-            Query query1 = entityManager.createQuery(query);
-            query1.setParameter("id", user.getId());
-            query1.setParameter("email", user.getEmail());
-            query1.setParameter("name", user.getName());
-            query1.setParameter("age", user.getAge());
-            query1.executeUpdate();
-            entityManager.getTransaction().commit();
-            System.out.println("User updated successfully");
-        }  catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            entityManager.getTransaction().rollback();
-        }  finally {
-            entityManager.close();
+        if (user.getName().isEmpty()) {
+            System.out.printf("Name is empty");
+        } else if (user.getAge() < 0) {
+            System.out.printf("Age is incorrect");
+        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
+            System.out.printf("Email is incorrect");
+        } else {
+            userDao.update(user);
         }
     }
 
     public static void removeUserById(int id) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        String query = "DELETE FROM User u WHERE u.id = :id";
-
-        try {
-            entityManager.getTransaction().begin();
-            Query query1 = entityManager.createQuery(query);
-            query1.setParameter("id", id);
-            query1.executeUpdate();
-            entityManager.getTransaction().commit();
-            System.out.println("User removed successfully");
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            entityManager.getTransaction().rollback();
-        }  finally {
-            entityManager.close();
+        if (id > 0) {
+            userDao.delete(id);
         }
     }
 
     public static User findUserById(int id) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        User user = new User();
-        try {
-            entityManager.getTransaction().begin();
-            user = entityManager.find(User.class, id);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            entityManager.close();
-        }
-        return user;
+        if (id > 0) {
+            return userDao.findById(id);
+        } else return null;
     }
 
-    public static LinkedList<User> findUserByName(String name) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        LinkedList<User> users = new LinkedList<>();
-        String query = "FROM User u WHERE u.name LIKE :name";
-        try {
-            entityManager.getTransaction().begin();
-            Query query1 = entityManager.createQuery(query);
-            query1.setParameter("name", name);
-            for(Object o : query1.getResultList()) {
-                users.add((User)o);
-            }
-        }  catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            entityManager.close();
-        }
-        return users;
+    public static List<User> findUserByName(String name) {
+        if (name.isEmpty()) {
+            System.out.printf("name is empty");
+            return null;
+        } else return userDao.findByName(name);
     }
 
-    public static LinkedList<User> findUserByEmail(String email) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        LinkedList<User> users = new LinkedList<>();
-        String query = "FROM User u WHERE u.email = :email";
-        try {
-            entityManager.getTransaction().begin();
-            Query query1 = entityManager.createQuery(query);
-            query1.setParameter("email", email);
-            for(Object o : query1.getResultList()) {
-                users.add((User)o);
-            }
-        }   catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            entityManager.close();
-        }
-        return users;
+    public static List<User> findUserByEmail(String email) {
+        if (email.isEmpty()) {
+            System.out.printf("email is empty");
+            return null;
+        } else return userDao.findByEmail(email);
     }
 
-    public static LinkedList<User> findUsersByAge(int age) {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("myHibernateUnit").createEntityManager();
-        LinkedList<User> users = new LinkedList<>();
-        String query = "FROM User u WHERE u.age = :age";
-        try {
-            entityManager.getTransaction().begin();
-            Query query1 = entityManager.createQuery(query);
-            query1.setParameter("age", age);
-            for(Object o : query1.getResultList()) {
-                users.add((User)o);
-            }
-        }    catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            entityManager.close();
-        }
-        return users;
+    public static List<User> findUsersByAge(int age) {
+        if (age < 1) {
+            System.out.printf("Age is incorrect");
+            return null;
+        } else return userDao.findUserByAge(age);
     }
 
 }
