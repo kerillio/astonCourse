@@ -1,0 +1,113 @@
+2026-11-12 12:34:22.632 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.14.Final
+2026-11-12 12:34:22.961 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-11-12 12:34:23.497 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-11-12 12:34:24.212 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-12 12:34:24.290 [main] INFO  Step2.Module2.DAO.UserDaoImpl - entity manager created
+2026-11-12 12:34:24.292 [main] INFO  Step2.Module2.DAO.UserDaoImpl - transaction began
+2026-11-12 12:34:24.305 [main] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-11-12 12:34:24.322 [main] INFO  Step2.Module2.DAO.UserDaoImpl - entity manager closed
+2026-11-12 13:28:44.938 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - building new SessionFactory
+2026-11-12 13:28:45.005 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.14.Final
+2026-11-12 13:28:45.440 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-11-12 13:28:46.066 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-11-12 13:28:46.936 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-12 13:28:47.031 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - built new SessionFactory
+2026-11-12 13:28:47.080 [main] DEBUG org.hibernate.SQL - 
+    /* insert 
+    for
+        Step2.Module2.Models.User
+        */insert 
+    into
+        users (age, created_at, email, name) 
+    values
+        (?, ?, ?, ?)
+2026-11-12 13:28:47.115 [main] INFO  Step2.Module2.DAO.UserDaoImpl - User added successfully
+2026-11-12 13:30:47.326 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - building new SessionFactory
+2026-11-12 13:30:47.373 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.14.Final
+2026-11-12 13:30:47.707 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-11-12 13:30:48.344 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-11-12 13:30:49.062 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-12 13:30:49.114 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - built new SessionFactory
+2026-11-12 13:30:49.115 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - closing SessionFactory
+2026-11-12 13:30:49.116 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - SessionFactory closed
+2026-11-12 13:32:23.384 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - building new SessionFactory
+2026-11-12 13:32:23.433 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.14.Final
+2026-11-12 13:32:23.767 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-11-12 13:32:24.326 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-11-12 13:32:25.036 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-12 13:32:25.084 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - built new SessionFactory
+2026-11-12 13:32:25.084 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - closing SessionFactory
+2026-11-12 13:32:25.085 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - SessionFactory closed
+2026-11-12 13:34:21.810 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - building new SessionFactory
+2026-11-12 13:34:21.857 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.14.Final
+2026-11-12 13:34:22.195 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-11-12 13:34:22.846 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-11-12 13:34:23.572 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-12 13:34:23.625 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - built new SessionFactory
+2026-11-12 13:34:23.625 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - closing SessionFactory
+2026-11-12 13:34:23.626 [main] INFO  S.M.DAO.HibernateSessionFactoryUtil - SessionFactory closed

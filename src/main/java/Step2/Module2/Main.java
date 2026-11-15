@@ -1,5 +1,6 @@
 package Step2.Module2;
 
+import Step2.Module2.DAO.HibernateSessionFactoryUtil;
 import Step2.Module2.Models.User;
 import Step2.Module2.Readers.UserReader;
 import Step2.Module2.Service.UserService;
@@ -20,6 +21,7 @@ public class Main {
         boolean exit = false;
         while (!exit) {
             if (screenHistory.getLast().getClass().equals(ExitScreen.class)) {
+                HibernateSessionFactoryUtil.shutdown();
                 exit = true;
                 break;
             } else screenHistory.addLast(screenHistory.getLast().show());

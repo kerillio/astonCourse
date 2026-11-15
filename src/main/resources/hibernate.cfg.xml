@@ -1,22 +1,33 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-
-    <!-- a SessionFactory instance listed as /jndi/name -->
     <session-factory>
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
-        <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">1231</property>
+        <!-- Настройки подключения к PostgreSQL -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1231</property>
+
+        <!-- SQL-диалект для PostgreSQL -->
+        <!-- Для Hibernate 6+ используйте этот универсальный диалект: -->
+<!--        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
+
+        <!-- Если у вас старая версия Hibernate 5.x, раскомментируйте строку ниже (зависит от версии вашей Postgres): -->
+        <!-- <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property> -->
+
+        <!-- Параметры логирования и отладки -->
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
 
-        <mapping class="Step2.Module2.Models.User"/>
+        <!-- Стратегия автоматического управления схемами (DDL) -->
+        <property name="hbm2ddl.auto">update</property>
 
-
+        <!-- Регистрация ваших Entity-классов -->
+         <mapping class="Step2.Module2.Models.User"/>
 
     </session-factory>
-
 </hibernate-configuration>
