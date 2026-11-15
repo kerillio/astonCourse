@@ -30,11 +30,19 @@ public class User {
 
     public User() {}
 
-    public User(String name, String email, int age, String created_at) {
+    public User(String name, String email, int age) {
         this.name = name;
         this.email = email;
         this.age = age;
         this.created_at = created_at;
+    }
+
+    public User (User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.email = user.getEmail();
+        this.age = user.getAge();
+        this.created_at = user.getCreated_at();
     }
 
     @Override
@@ -46,6 +54,8 @@ public class User {
                 "\n\tage: " + this.age +
                 "\n\tcreated_at: " + this.created_at + "\n}\n";
     }
+
+    public void setId(int id) {this.id = id;}
 
     public int getId() {
         return id;

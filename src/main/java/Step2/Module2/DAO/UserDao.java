@@ -7,8 +7,14 @@ import java.util.Optional;
 
 public interface UserDao<T>{
     void save(User user);
-    T findById(int id);
+    User findById(int id);
     List<T> findAll();
     void update(User user);
     void delete(int id);
+
+    List<User> findByEmail(String email);
+
+    List<User> findByName(String name);
+
+    List<User> findUserByAge(int age);
 }

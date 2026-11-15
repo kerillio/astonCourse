@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao<User> {
 
-    private static final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
+    private static Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
 
     @Override
     public void save(User user) {

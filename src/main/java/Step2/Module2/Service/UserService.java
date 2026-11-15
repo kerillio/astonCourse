@@ -1,5 +1,6 @@
 package Step2.Module2.Service;
 
+import Step2.Module2.DAO.UserDao;
 import Step2.Module2.DAO.UserDaoImpl;
 import Step2.Module2.Models.User;
 import org.slf4j.Logger;
@@ -9,9 +10,13 @@ import java.util.List;
 public class UserService {
     
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
-    private static UserDaoImpl userDao = new UserDaoImpl();
+    private static UserDao userDao = new UserDaoImpl();
 
     public UserService() {
+    }
+
+    public UserService (UserDao userDao) {
+        this.userDao = userDao;
     }
 
     public User getUser() {
