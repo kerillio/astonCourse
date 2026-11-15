@@ -1,14 +1,14 @@
 package Step2.Module2.Service;
 
-import Step2.Module2.DAO.UserDao;
 import Step2.Module2.DAO.UserDaoImpl;
 import Step2.Module2.Models.User;
-
-import java.util.LinkedList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class UserService {
-
+    
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
     private static UserDaoImpl userDao = new UserDaoImpl();
 
     public UserService() {
@@ -20,11 +20,11 @@ public class UserService {
 
     public static void addUser(User user) {
         if (user.getName().isEmpty()) {
-            System.out.printf("Name is empty");
+            log.warn("user.name is empty");
         } else if (user.getAge() < 0) {
-            System.out.printf("Age is incorrect");
+            log.warn("Age is incorrect");
         } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
-            System.out.printf("Email is incorrect");
+            log.warn("Email is incorrect");
         } else {
             userDao.save(user);
         }
@@ -33,11 +33,11 @@ public class UserService {
 
     public static void updateUser (User user) {
         if (user.getName().isEmpty()) {
-            System.out.printf("Name is empty");
+            log.warn("Name is empty");
         } else if (user.getAge() < 0) {
-            System.out.printf("Age is incorrect");
+            log.warn("Age is incorrect");
         } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
-            System.out.printf("Email is incorrect");
+            log.warn("Email is incorrect");
         } else {
             userDao.update(user);
         }
@@ -57,21 +57,21 @@ public class UserService {
 
     public static List<User> findUserByName(String name) {
         if (name.isEmpty()) {
-            System.out.printf("name is empty");
+            log.warn("name is empty");
             return null;
         } else return userDao.findByName(name);
     }
 
     public static List<User> findUserByEmail(String email) {
         if (email.isEmpty()) {
-            System.out.printf("email is empty");
+            log.warn("email is empty");
             return null;
         } else return userDao.findByEmail(email);
     }
 
     public static List<User> findUsersByAge(int age) {
         if (age < 1) {
-            System.out.printf("Age is incorrect");
+            log.warn("Age is incorrect");
             return null;
         } else return userDao.findUserByAge(age);
     }

@@ -3,13 +3,17 @@ package Step2.Module2.DAO;
 import Step2.Module2.Models.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 public class UserDaoImpl implements UserDao {
+
+    private static final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
+
     @Override
     public void save(User user) {
         EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
@@ -17,10 +21,11 @@ public class UserDaoImpl implements UserDao {
             entityManager.getTransaction().begin();
             entityManager.persist(user);
             entityManager.getTransaction().commit();
-            System.out.println("User added successfully");
+            log.info("User added successfully");
 
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("Error in method save(user): ", e);
+            log.warn("transaction rolled back");
             entityManager.getTransaction().rollback();
         } finally {
             entityManager.close();
@@ -35,7 +40,7 @@ public class UserDaoImpl implements UserDao {
             entityManager.getTransaction().begin();
             user = entityManager.find(User.class, id);
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method findById: ", e);
         } finally {
             entityManager.close();
         }
@@ -52,7 +57,7 @@ public class UserDaoImpl implements UserDao {
             Query query1 = entityManager.createQuery(query);
             users.addAll(query1.getResultList());
         } catch (IllegalArgumentException e) {
-            System.out.printf("Неверный запрос hql для UserDaoImpl.findAll()");
+            log.error("Неверный запрос hql для findAll():", e);
         } finally {
             entityManager.close();
         }
@@ -71,7 +76,7 @@ public class UserDaoImpl implements UserDao {
                 users.add((User)o);
             }
         }  catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method findByName: ", e);
         } finally {
             entityManager.close();
         }
@@ -80,6 +85,7 @@ public class UserDaoImpl implements UserDao {
 
     public List<User> findByEmail(String email) {
         EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        log.info("entity manager created");
         LinkedList<User> users = new LinkedList<>();
         String query = "FROM User u WHERE u.email = :email";
         try {
@@ -90,7 +96,7 @@ public class UserDaoImpl implements UserDao {
                 users.add((User)o);
             }
         }   catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method findByEmail: ", e);
         } finally {
             entityManager.close();
         }
@@ -109,7 +115,7 @@ public class UserDaoImpl implements UserDao {
                 users.add((User)o);
             }
         }   catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method findByAge: ", e);
         } finally {
             entityManager.close();
         }
@@ -134,10 +140,11 @@ public class UserDaoImpl implements UserDao {
             query1.setParameter("age", user.getAge());
             query1.executeUpdate();
             entityManager.getTransaction().commit();
-            System.out.println("User updated successfully");
+            log.info("user updated successfully");
         }  catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method update(user): ", e);
             entityManager.getTransaction().rollback();
+            log.info("transaction rolled back");
         } finally {
             entityManager.close();
         }
@@ -154,10 +161,11 @@ public class UserDaoImpl implements UserDao {
             query1.setParameter("id", id);
             query1.executeUpdate();
             entityManager.getTransaction().commit();
-            System.out.println("User removed successfully");
+            log.info("user removed successfully");
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("error in method delete(user): ", e);
             entityManager.getTransaction().rollback();
+            log.info("transaction rolled back");
         } finally {
             entityManager.close();
         }

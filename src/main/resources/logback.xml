@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!-- Настройка вывода в консоль -->
+    <!-- Вывод в консоль с подсветкой уровней -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Логирование самих SQL-запросов, которые генерирует Hibernate -->
+    <!-- Запись в файл с ротацией по дням и ограничением размера -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Активный файл логов -->
+        <file>src/main/java/Step2/Module2/logs/app.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- Шаблон имени для архивных файлов -->
+            <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- Максимальный размер одного файла -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- Хранить архивы за последние 30 дней -->
+            <maxHistory>30</maxHistory>
+            <!-- Общий лимит места на диске для всех архивов -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Логгер только для SQL-запросов Hibernate -->
     <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
     </logger>
 
-    <!-- Логирование параметров (значений), подставляемых вместо знаков '?' в SQL -->
+    <!-- Логгер для параметров SQL (значения вместо '?') -->
     <logger name="org.hibernate.orm.jdbc.bind" level="TRACE" additivity="false">
         <appender-ref ref="CONSOLE" />
     </logger>
 
-    <!-- Общий уровень логирования для всего остального (чтобы не засорять консоль) -->
+    <!-- Корневой логгер для всего приложения и остальных библиотек -->
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
     </root>
 
 </configuration>

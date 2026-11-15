@@ -6,7 +6,6 @@ public class ExitScreen implements Screen {
 
     @Override
     public Screen show() {
-        HibernateSessionFactoryUtil.shutdown();
         return null;
     }
 }
