@@ -69,7 +69,32 @@ public class UserDaoImplTest {
         user.setEmail("anna@example.com");
         userDao.save(user);
         User foundUser = userDao.findById(user.getId());
-
         assertThat(foundUser).usingRecursiveComparison().isEqualTo(user);
+    }
+
+    @Test
+    void saveAndUpdateUser() {
+        UserDaoImpl userDao = new UserDaoImpl();
+        User user = new User();
+        user.setName("kirill");
+        user.setEmail("kirill@example.com");
+        user.setAge(30);
+
+        //Сохраняем пользователя
+        userDao.save(user);
+
+        //проверка сохранения
+        User foundUser = userDao.findById(user.getId());
+        assertThat(foundUser).usingRecursiveComparison().isEqualTo(user);
+
+        //обновляем данные
+        user.setName("alex");
+        userDao.update(user);
+
+        //проверяем что данные обновлены
+        User foundUserUpdated = userDao.findById(user.getId());
+        Assertions.assertNotEquals(foundUser, foundUserUpdated);
+        assertThat(foundUserUpdated).usingRecursiveComparison().isEqualTo(user);
+
     }
 }
