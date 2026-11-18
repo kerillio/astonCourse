@@ -25,6 +25,7 @@ public class UserDaoImplTest {
     @BeforeAll
     static void setupHibernate() {
         Configuration configuration = new Configuration();
+        configuration.configure("hibernate.cfg.xml");
 
         // Передаем настройки подключения из Testcontainers
         configuration.setProperty("hibernate.connection.url", postgres.getJdbcUrl());
@@ -58,18 +59,45 @@ public class UserDaoImplTest {
             tx.commit();
         }
         // Инициализируем DAO, передавая ему фабрику сессий
-        userDao = new UserDaoImpl();
+        userDao = new UserDaoImpl(sessionFactory);
     }
 
     @Test
     void saveAndFindUser() {
-        UserDaoImpl userDao = new UserDaoImpl();
         User user = new User();
         user.setName("Anna");
         user.setEmail("anna@example.com");
         userDao.save(user);
         User foundUser = userDao.findById(user.getId());
-
         assertThat(foundUser).usingRecursiveComparison().isEqualTo(user);
     }
+
+    @Test
+    void saveAndUpdateUser() {
+        User user = new User();
+        user.setName("kirill");
+        user.setEmail("kirill@example.com");
+        user.setAge(30);
+
+        //Сохраняем пользователя
+        userDao.save(user);
+
+        //проверка сохранения
+        User foundUser = userDao.findById(user.getId());
+        assertThat(foundUser).usingRecursiveComparison().isEqualTo(user);
+
+        //обновляем данные
+        user.setName("alex");
+        userDao.update(user);
+
+        //проверяем что данные обновлены
+        User foundUserUpdated = userDao.findById(user.getId());
+        Assertions.assertNotEquals(foundUser, foundUserUpdated);
+        assertThat(foundUserUpdated).usingRecursiveComparison().isEqualTo(user);
+    }
+
+//    @Test
+//    void userNotFoundException() {
+//        Assertions.assertThrowsExactly();
+//    }
 }

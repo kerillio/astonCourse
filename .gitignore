@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+**/src/main/java/Step2/Module2/logs/*
 .kotlin
 
 ### IntelliJ IDEA ###
