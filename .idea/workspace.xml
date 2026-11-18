@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="created integration test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="created new integration test saveAndUpdateUser in UserDaoImplTest">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/astonCourse.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,65 +68,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="4.623295010624172E-15" />
-      <entry key="MS500" value="0.0013582831754980357" />
-      <entry key="S2" value="0.1919762837127623" />
-      <entry key="S5" value="0.5167720686184286" />
-      <entry key="S10" value="0.7188686031677557" />
-      <entry key="S30" value="0.895941841976365" />
-      <entry key="S60" value="0.9659439281970612" />
-      <entry key="M2" value="1.3502483283903293" />
-      <entry key="M5" value="4.123601452353843" />
-      <entry key="M10" value="8.4405625565911" />
-      <entry key="M15" value="13.23532074350846" />
-      <entry key="M30" value="34.76977919007937" />
-      <entry key="H1" value="84.90179982276857" />
-      <entry key="H2" value="162.25842024662992" />
-      <entry key="H4" value="243.39532692494845" />
-      <entry key="D1" value="512.0441709704002" />
-      <entry key="W1" value="783.5884255629736" />
+      <entry key="MS100" value="1.00006103515625" />
+      <entry key="MS500" value="1.1435872943746292" />
+      <entry key="S2" value="1.615572206672458" />
+      <entry key="S5" value="1.8235910172675793" />
+      <entry key="S10" value="1.9075193038348803" />
+      <entry key="S30" value="1.9874546740827401" />
+      <entry key="S60" value="2.4297323066982113" />
+      <entry key="M2" value="4.2567201649958575" />
+      <entry key="M5" value="8.1240576044147" />
+      <entry key="M10" value="10.565748529437155" />
+      <entry key="M15" value="11.582800503524368" />
+      <entry key="M30" value="12.72253430071886" />
+      <entry key="H1" value="13.34305423818264" />
+      <entry key="H2" value="13.724186015864605" />
+      <entry key="H4" value="18.46467803105503" />
+      <entry key="D1" value="295.8205762812323" />
+      <entry key="W1" value="774.0877826964755" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000000000000009" />
-      <entry key="MS500" value="1.0009538169228147" />
-      <entry key="S2" value="1.1757382332032444" />
-      <entry key="S5" value="1.498823037212134" />
-      <entry key="S10" value="1.706274052483973" />
-      <entry key="S30" value="1.890548882102327" />
-      <entry key="S60" value="1.9439389778079557" />
-      <entry key="M2" value="1.998144437776837" />
-      <entry key="M5" value="2.481694328717251" />
-      <entry key="M10" value="3.9256739770788203" />
-      <entry key="M15" value="6.202434523715558" />
-      <entry key="M30" value="17.113853968721568" />
-      <entry key="H1" value="44.0046902802592" />
-      <entry key="H2" value="87.69030331257069" />
-      <entry key="H4" value="134.40996089322988" />
-      <entry key="D1" value="259.8174403439442" />
-      <entry key="W1" value="366.75823464124227" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="5.317942029970326E-127" />
+      <entry key="S2" value="2.701690950790714E-32" />
+      <entry key="S5" value="2.5211694850952156E-13" />
+      <entry key="S10" value="6.814972773870697E-7" />
+      <entry key="S30" value="0.027063209029950318" />
+      <entry key="S60" value="0.5477322747636422" />
+      <entry key="M2" value="2.6912435922869973" />
+      <entry key="M5" value="7.191589919293573" />
+      <entry key="M10" value="10.023503695547708" />
+      <entry key="M15" value="11.201823815635874" />
+      <entry key="M30" value="12.521563089340706" />
+      <entry key="H1" value="13.239794205260733" />
+      <entry key="H2" value="13.650789416422539" />
+      <entry key="H4" value="16.585997780132388" />
+      <entry key="D1" value="163.41905669802534" />
+      <entry key="W1" value="382.84050963682887" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="9.564651343648707E-4" />
-      <entry key="MS500" value="0.2503778025861697" />
-      <entry key="S2" value="1.012154975264094" />
-      <entry key="S5" value="1.8081583316767393" />
-      <entry key="S10" value="2.30111074063069" />
-      <entry key="S30" value="2.7391145463685835" />
-      <entry key="S60" value="2.884976765147575" />
-      <entry key="M2" value="3.3309674065180945" />
-      <entry key="M5" value="6.57771155707336" />
-      <entry key="M10" value="12.334412434070053" />
-      <entry key="M15" value="19.404968345003052" />
-      <entry key="M30" value="51.84595812342929" />
-      <entry key="H1" value="128.8644856829775" />
-      <entry key="H2" value="249.91001098770946" />
-      <entry key="H4" value="377.77669900693405" />
-      <entry key="D1" value="771.8522649468" />
-      <entry key="W1" value="1150.3447056618697" />
+      <entry key="MS100" value="6.822320575002842E-5" />
+      <entry key="MS500" value="0.21769011334077504" />
+      <entry key="S2" value="1.1355907257240598" />
+      <entry key="S5" value="1.593293314964211" />
+      <entry key="S10" value="1.7848200288141676" />
+      <entry key="S30" value="1.9697110446289399" />
+      <entry key="S60" value="2.9342523034172006" />
+      <entry key="M2" value="6.885599739556924" />
+      <entry key="M5" value="15.257774793376116" />
+      <entry key="M10" value="20.550174684533427" />
+      <entry key="M15" value="22.755781851296287" />
+      <entry key="M30" value="25.228119812122774" />
+      <entry key="H1" value="26.574437473473687" />
+      <entry key="H2" value="27.370645719106893" />
+      <entry key="H4" value="35.04792984010336" />
+      <entry key="D1" value="459.2340148672801" />
+      <entry key="W1" value="1156.9263117069163" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -139,42 +139,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.UserDaoImplTest.executor": "Run",
-    "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
-    "Maven.UserDaoImplTest.executor": "Run",
-    "Maven.UserServiceTest.executor": "Run",
-    "Maven.astonCourse [test].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Step2.Module3.DAO__service__tests",
-    "git.auto.fetch.suggestion.counter": "2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveAndFindUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.UserDaoImplTest.saveAndUpdateUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [process-test-classes].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.astonCourse [validate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Step2.Module3.DAO__service__tests&quot;,
+    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;F:/IdeaProjects/astonCourse/src/main/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
+  <component name="RunManager" selected="JUnit.UserDaoImplTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Step2.Module2.Main" />
       <module name="astonCourse" />
@@ -219,6 +226,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserDaoImplTest.saveAndUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="saveAndUpdateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
@@ -236,10 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserDaoImplTest.saveAndUpdateUser" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserDaoImplTest" />
         <item itemvalue="JUnit.UserDaoImplTest.saveAndFindUser" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +305,9 @@
     <MESSAGE value="file refactor 2" />
     <MESSAGE value="rebuild with DAO pattern" />
     <MESSAGE value="created integration test" />
-    <option name="LAST_COMMIT_MESSAGE" value="created integration test" />
+    <MESSAGE value="created unit test" />
+    <MESSAGE value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -290,11 +316,6 @@
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

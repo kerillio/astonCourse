@@ -25,6 +25,7 @@ public class UserDaoImplTest {
     @BeforeAll
     static void setupHibernate() {
         Configuration configuration = new Configuration();
+        configuration.configure("hibernate.cfg.xml");
 
         // Передаем настройки подключения из Testcontainers
         configuration.setProperty("hibernate.connection.url", postgres.getJdbcUrl());
@@ -58,12 +59,11 @@ public class UserDaoImplTest {
             tx.commit();
         }
         // Инициализируем DAO, передавая ему фабрику сессий
-        userDao = new UserDaoImpl();
+        userDao = new UserDaoImpl(sessionFactory);
     }
 
     @Test
     void saveAndFindUser() {
-        UserDaoImpl userDao = new UserDaoImpl();
         User user = new User();
         user.setName("Anna");
         user.setEmail("anna@example.com");
@@ -74,7 +74,6 @@ public class UserDaoImplTest {
 
     @Test
     void saveAndUpdateUser() {
-        UserDaoImpl userDao = new UserDaoImpl();
         User user = new User();
         user.setName("kirill");
         user.setEmail("kirill@example.com");
@@ -95,6 +94,10 @@ public class UserDaoImplTest {
         User foundUserUpdated = userDao.findById(user.getId());
         Assertions.assertNotEquals(foundUser, foundUserUpdated);
         assertThat(foundUserUpdated).usingRecursiveComparison().isEqualTo(user);
-
     }
+
+//    @Test
+//    void userNotFoundException() {
+//        Assertions.assertThrowsExactly();
+//    }
 }

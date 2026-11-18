@@ -3,6 +3,7 @@ package Step2.Module2.DAO;
 import Step2.Module2.Models.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,10 +14,19 @@ import java.util.List;
 public class UserDaoImpl implements UserDao<User> {
 
     private static Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
+    private static SessionFactory sessionFactory;
+
+    public UserDaoImpl () {
+        this.sessionFactory = HibernateSessionFactoryUtil.getSessionFactory();
+    }
+
+    public UserDaoImpl (SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void save(User user) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(user);
@@ -34,7 +44,7 @@ public class UserDaoImpl implements UserDao<User> {
 
     @Override
     public User findById(int id) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         User user = new User();
         try {
             entityManager.getTransaction().begin();
@@ -49,7 +59,7 @@ public class UserDaoImpl implements UserDao<User> {
 
     @Override
     public List findAll() {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         List<User> users = new ArrayList<>();
         String query = "FROM User u";
         try {
@@ -65,7 +75,7 @@ public class UserDaoImpl implements UserDao<User> {
     }
 
     public List<User> findByName(String name) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         LinkedList<User> users = new LinkedList<>();
         String query = "FROM User u WHERE u.name LIKE :name";
         try {
@@ -84,7 +94,7 @@ public class UserDaoImpl implements UserDao<User> {
     }
 
     public List<User> findByEmail(String email) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         log.info("entity manager created");
         LinkedList<User> users = new LinkedList<>();
         String query = "FROM User u WHERE u.email = :email";
@@ -104,7 +114,7 @@ public class UserDaoImpl implements UserDao<User> {
     }
 
     public List<User> findUserByAge (int age) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         List<User> users = new ArrayList<>();
         String query = "FROM User u WHERE u.age = :age";
         try {
@@ -124,7 +134,7 @@ public class UserDaoImpl implements UserDao<User> {
 
     @Override
     public void update(User user) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         String query = "update User"
                 + " set email = :email,"
                 + " name = :name,"
@@ -152,7 +162,7 @@ public class UserDaoImpl implements UserDao<User> {
 
     @Override
     public void delete(int id) {
-        EntityManager entityManager = HibernateSessionFactoryUtil.getSessionFactory().createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         String query = "DELETE FROM User u WHERE u.id = :id";
 
         try {
