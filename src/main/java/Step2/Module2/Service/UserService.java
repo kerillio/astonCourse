@@ -10,7 +10,7 @@ import java.util.List;
 public class UserService {
     
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
-    private static UserDao userDao = new UserDaoImpl();
+    private static UserDao<User> userDao = new UserDaoImpl();
 
     public UserService() {
     }
@@ -52,6 +52,10 @@ public class UserService {
         if (id > 0) {
             userDao.delete(id);
         }
+    }
+
+    public static List<User> findAll() {
+        return userDao.findAll();
     }
 
     public static User findUserById(int id) {

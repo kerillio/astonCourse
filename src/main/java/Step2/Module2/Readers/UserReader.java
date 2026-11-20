@@ -9,22 +9,35 @@ public class UserReader {
     public static User readByConsole() {
         Scanner sc = new Scanner(System.in);
         User user = new User();
-        try {
-            System.out.print("Enter username: ");
-            String username = sc.nextLine();
-            user.setName(username);
-            System.out.println("Enter email: ");
-            String email = sc.nextLine();
-            user.setEmail(email);
-            System.out.println("Enter age: ");
-            int age = sc.nextInt();
-            user.setAge(age);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+        System.out.println("Enter username: ");
+        user.setName(readLine(sc));
+
+        System.out.println("Enter email: ");
+        user.setEmail(readLine(sc));
+
+        System.out.println("Enter age: ");
+        try {
+            user.setAge(Integer.parseInt(readLine(sc)));
+        } catch (NumberFormatException e) {
+            user.setAge(0);
+        }
         return user;
 
+    }
+
+    private static String readLine (Scanner sc) {
+        boolean exit = false;
+        String returnString = null;
+        while (!exit) {
+            try {
+                returnString = sc.nextLine();
+                if (returnString != null) exit = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return returnString;
     }
 
 }

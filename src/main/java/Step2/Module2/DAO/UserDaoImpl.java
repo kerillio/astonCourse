@@ -32,7 +32,6 @@ public class UserDaoImpl implements UserDao<User> {
             entityManager.persist(user);
             entityManager.getTransaction().commit();
             log.info("User added successfully");
-
         } catch (Exception e) {
             log.error("Error in method save(user): ", e);
             log.warn("transaction rolled back");
@@ -47,7 +46,6 @@ public class UserDaoImpl implements UserDao<User> {
         EntityManager entityManager = sessionFactory.createEntityManager();
         User user = new User();
         try {
-            entityManager.getTransaction().begin();
             user = entityManager.find(User.class, id);
         } catch (Exception e) {
             log.error("error in method findById: ", e);
@@ -61,9 +59,8 @@ public class UserDaoImpl implements UserDao<User> {
     public List findAll() {
         EntityManager entityManager = sessionFactory.createEntityManager();
         List<User> users = new ArrayList<>();
-        String query = "FROM User u";
+        String query = "FROM User";
         try {
-            entityManager.getTransaction().begin();
             Query query1 = entityManager.createQuery(query);
             users.addAll(query1.getResultList());
         } catch (IllegalArgumentException e) {
@@ -71,7 +68,7 @@ public class UserDaoImpl implements UserDao<User> {
         } finally {
             entityManager.close();
         }
-        return List.of();
+        return users;
     }
 
     public List<User> findByName(String name) {
@@ -79,7 +76,6 @@ public class UserDaoImpl implements UserDao<User> {
         LinkedList<User> users = new LinkedList<>();
         String query = "FROM User u WHERE u.name LIKE :name";
         try {
-            entityManager.getTransaction().begin();
             Query query1 = entityManager.createQuery(query);
             query1.setParameter("name", name);
             for(Object o : query1.getResultList()) {
@@ -99,7 +95,6 @@ public class UserDaoImpl implements UserDao<User> {
         LinkedList<User> users = new LinkedList<>();
         String query = "FROM User u WHERE u.email = :email";
         try {
-            entityManager.getTransaction().begin();
             Query query1 = entityManager.createQuery(query);
             query1.setParameter("email", email);
             for(Object o : query1.getResultList()) {
@@ -118,7 +113,6 @@ public class UserDaoImpl implements UserDao<User> {
         List<User> users = new ArrayList<>();
         String query = "FROM User u WHERE u.age = :age";
         try {
-            entityManager.getTransaction().begin();
             Query query1 = entityManager.createQuery(query);
             query1.setParameter("age", age);
             for(Object o : query1.getResultList()) {

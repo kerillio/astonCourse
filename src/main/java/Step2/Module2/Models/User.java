@@ -52,7 +52,7 @@ public class User {
                 "\n\tname: " + this.name +
                 "\n\temail: " + this.email +
                 "\n\tage: " + this.age +
-                "\n\tcreated_at: " + this.created_at + "\n}\n";
+                "\n\tcreated_at: " + this.created_at + "\n}";
     }
 
     public void setId(int id) {this.id = id;}

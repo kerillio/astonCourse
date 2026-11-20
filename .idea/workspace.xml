@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="created new integration test saveAndUpdateUser in UserDaoImplTest">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="теперь интеграционные тесты работают через docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/astonCourse.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,61 +71,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.00006103515625" />
-      <entry key="MS500" value="1.1435872943746292" />
-      <entry key="S2" value="1.615572206672458" />
-      <entry key="S5" value="1.8235910172675793" />
-      <entry key="S10" value="1.9075193038348803" />
-      <entry key="S30" value="1.9874546740827401" />
-      <entry key="S60" value="2.4297323066982113" />
-      <entry key="M2" value="4.2567201649958575" />
-      <entry key="M5" value="8.1240576044147" />
-      <entry key="M10" value="10.565748529437155" />
-      <entry key="M15" value="11.582800503524368" />
-      <entry key="M30" value="12.72253430071886" />
-      <entry key="H1" value="13.34305423818264" />
-      <entry key="H2" value="13.724186015864605" />
-      <entry key="H4" value="18.46467803105503" />
-      <entry key="D1" value="295.8205762812323" />
-      <entry key="W1" value="774.0877826964755" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000287117342381" />
+      <entry key="S2" value="1.0732006363261757" />
+      <entry key="S5" value="1.351403386528502" />
+      <entry key="S10" value="1.5927928698360854" />
+      <entry key="S30" value="1.8400419810065909" />
+      <entry key="S60" value="1.916538064702323" />
+      <entry key="M2" value="1.957862302188122" />
+      <entry key="M5" value="2.3179847768055533" />
+      <entry key="M10" value="6.630275946206577" />
+      <entry key="M15" value="14.541515897565969" />
+      <entry key="M30" value="38.381287091964985" />
+      <entry key="H1" value="65.58669435735061" />
+      <entry key="H2" value="86.63339835178361" />
+      <entry key="H4" value="103.58037075628829" />
+      <entry key="D1" value="385.6866965133412" />
+      <entry key="W1" value="871.4017543481909" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.317942029970326E-127" />
-      <entry key="S2" value="2.701690950790714E-32" />
-      <entry key="S5" value="2.5211694850952156E-13" />
-      <entry key="S10" value="6.814972773870697E-7" />
-      <entry key="S30" value="0.027063209029950318" />
-      <entry key="S60" value="0.5477322747636422" />
-      <entry key="M2" value="2.6912435922869973" />
-      <entry key="M5" value="7.191589919293573" />
-      <entry key="M10" value="10.023503695547708" />
-      <entry key="M15" value="11.201823815635874" />
-      <entry key="M30" value="12.521563089340706" />
-      <entry key="H1" value="13.239794205260733" />
-      <entry key="H2" value="13.650789416422539" />
-      <entry key="H4" value="16.585997780132388" />
-      <entry key="D1" value="163.41905669802534" />
-      <entry key="W1" value="382.84050963682887" />
+      <entry key="MS100" value="4.501047951373758E-52" />
+      <entry key="MS500" value="5.438109050239823E-11" />
+      <entry key="S2" value="0.003586709721852544" />
+      <entry key="S5" value="0.15389913711603467" />
+      <entry key="S10" value="0.5513426871340448" />
+      <entry key="S30" value="1.2998231673833345" />
+      <entry key="S60" value="1.6120582683426177" />
+      <entry key="M2" value="1.7956622735878796" />
+      <entry key="M5" value="2.033602945418797" />
+      <entry key="M10" value="3.7912790515480084" />
+      <entry key="M15" value="7.199544626556368" />
+      <entry key="M30" value="18.037820518571877" />
+      <entry key="H1" value="30.90375245154051" />
+      <entry key="H2" value="41.080958595047946" />
+      <entry key="H4" value="49.788565743977344" />
+      <entry key="D1" value="198.63046990168527" />
+      <entry key="W1" value="422.0508843434005" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.822320575002842E-5" />
-      <entry key="MS500" value="0.21769011334077504" />
-      <entry key="S2" value="1.1355907257240598" />
-      <entry key="S5" value="1.593293314964211" />
-      <entry key="S10" value="1.7848200288141676" />
-      <entry key="S30" value="1.9697110446289399" />
-      <entry key="S60" value="2.9342523034172006" />
-      <entry key="M2" value="6.885599739556924" />
-      <entry key="M5" value="15.257774793376116" />
-      <entry key="M10" value="20.550174684533427" />
-      <entry key="M15" value="22.755781851296287" />
-      <entry key="M30" value="25.228119812122774" />
-      <entry key="H1" value="26.574437473473687" />
-      <entry key="H2" value="27.370645719106893" />
-      <entry key="H4" value="35.04792984010336" />
-      <entry key="D1" value="459.2340148672801" />
-      <entry key="W1" value="1156.9263117069163" />
+      <entry key="MS100" value="1.3877787807814488E-17" />
+      <entry key="MS500" value="4.2507361532597397E-4" />
+      <entry key="S2" value="0.14866575211299132" />
+      <entry key="S5" value="0.6821891130432635" />
+      <entry key="S10" value="1.4871848861652497" />
+      <entry key="S30" value="2.812769525283464" />
+      <entry key="S60" value="3.3455548935554185" />
+      <entry key="M2" value="3.656516401554106" />
+      <entry key="M5" value="4.310082189596111" />
+      <entry key="M10" value="10.391513726508197" />
+      <entry key="M15" value="21.70949307234153" />
+      <entry key="M30" value="56.38563193368844" />
+      <entry key="H1" value="96.46349294735207" />
+      <entry key="H2" value="127.69690010445586" />
+      <entry key="H4" value="153.35850155584384" />
+      <entry key="D1" value="584.3102135170549" />
+      <entry key="W1" value="1293.450448102877" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -181,7 +184,7 @@
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoImplTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Step2.Module2.Main" />
       <module name="astonCourse" />
@@ -307,7 +310,8 @@
     <MESSAGE value="created integration test" />
     <MESSAGE value="created unit test" />
     <MESSAGE value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
+    <MESSAGE value="теперь интеграционные тесты работают через docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="теперь интеграционные тесты работают через docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

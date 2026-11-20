@@ -35,7 +35,7 @@ public class MainScreen implements Screen {
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             } catch (NoSuchElementException e) {
-                e.printStackTrace();
+                System.out.println("No such element exception");;
             }
         }
         return new MainScreen();

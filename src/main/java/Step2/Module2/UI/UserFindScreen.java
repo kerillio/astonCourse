@@ -3,10 +3,7 @@ package Step2.Module2.UI;
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
 
-import java.util.InputMismatchException;
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class UserFindScreen implements Screen {
 
@@ -21,6 +18,7 @@ public class UserFindScreen implements Screen {
         System.out.println("2. name");
         System.out.println("3. email");
         System.out.println("4. age");
+        System.out.println("5. вывести всех пользователей на экран");
         System.out.println();
         System.out.println("0. exit");
 
@@ -44,6 +42,8 @@ public class UserFindScreen implements Screen {
             case 3: userFindByEmail();
                 break;
             case 4: userFindByAge();
+                break;
+            case 5: findAll();
                 break;
             case 0: return new MainScreen();
         }
@@ -133,7 +133,12 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUsersByAge(age)) users.addLast(user);
+        List<User> usersByAge = UserService.findUsersByAge(age);
+        if (usersByAge != null) for (User user : usersByAge) users.addLast(user);
+    }
+
+    private static void findAll() {
+        for (User user : UserService.findAll()) users.addLast(user);
     }
 
 }
