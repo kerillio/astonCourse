@@ -1,5 +1,8 @@
 package Step2.Module2.Service;
 
+import Step2.Module2.DTO.UserCreateDto;
+import Step2.Module2.DTO.UserUpdateDto;
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Models.User;
 import Step2.Module2.Repository.UserRepository;
 import org.slf4j.Logger;
@@ -23,73 +26,79 @@ public class UserService {
     }
 
 
-    public User getUser() {
-        return new User();
+//    public User getUser() {
+//        return new User();
+//    }
+
+    @Transactional
+    public void addUser(UserCreateDto dto) {
+        if (dto.name().isEmpty()) {
+            log.warn("user.name is empty");
+        } else if (dto.age() < 0) {
+            log.warn("Age is incorrect");
+        } else if (dto.email().isEmpty() || !dto.email().contains("@")) {
+            log.warn("Email is incorrect");
+        } else {
+            userRepository.save(dto.toEntity());
+        }
+
     }
 
     @Transactional
-    public void addUser(User user) {
-        if (user.getName().isEmpty()) {
-            log.warn("user.name is empty");
-        } else if (user.getAge() < 0) {
-            log.warn("Age is incorrect");
-        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
-            log.warn("Email is incorrect");
-        } else {
-            userRepository.save(user);
-        }
-
-    }
-
-    public void updateUser (User user) {
-        if (user.getName().isEmpty()) {
+    public void updateUser (UserUpdateDto dto) {
+        if (dto.name().isEmpty()) {
             log.warn("Name is empty");
-        } else if (user.getAge() < 0) {
+        } else if (dto.age() < 0) {
             log.warn("Age is incorrect");
-        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
+        } else if (dto.email().isEmpty() || !dto.email().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userRepository.save(user);
+            Optional<User> existingUser = userRepository.findById(dto.id().longValue());
+            if (existingUser.isPresent()) {
+                dto.applyTo(existingUser.get());
+                userRepository.save(existingUser.get());
+            }
+
         }
     }
 
+    @Transactional
     public void removeUserById(int id) {
         if (id > 0) {
             userRepository.deleteById((long) id);
         }
     }
 
-    public  List<User> findAll() {
-        return userRepository.findAll();
+    public  List<UserViewDto> findAll() {
+        return userRepository.findAll().stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public User findUserById(int id) {
+    public UserViewDto findUserById(int id) {
         if (id > 0) {
             Optional<User> foundUser = userRepository.findById((long) id);
-            if (foundUser.isPresent()) return foundUser.get();
-            else return null;
+            return foundUser.map(UserViewDto::fromEntity).orElse(null);
         } else return null;
     }
 
-    public List<User> findUserByName(String name) {
+    public List<UserViewDto> findUserByName(String name) {
         if (name.isEmpty()) {
             log.warn("name is empty");
             return null;
-        } else return userRepository.findByName(name);
+        } else return userRepository.findByName(name).stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public List<User> findUserByEmail(String email) {
+    public List<UserViewDto> findUserByEmail(String email) {
         if (email.isEmpty()) {
             log.warn("email is empty");
             return null;
-        } else return userRepository.findByEmail(email);
+        } else return userRepository.findByEmail(email).stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public List<User> findUsersByAge(int age) {
+    public List<UserViewDto> findUsersByAge(int age) {
         if (age < 1) {
             log.warn("Age is incorrect");
             return null;
-        } else return userRepository.findUserByAge(age);
+        } else return userRepository.findByAge(age).stream().map(UserViewDto::fromEntity).toList();
     }
 
 }

@@ -1,5 +1,7 @@
 package Step2.Module2.UI;
 
+import Step2.Module2.DTO.UserCreateDto;
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Models.User;
 import Step2.Module2.Readers.UserReader;
 import Step2.Module2.Service.UserService;
@@ -12,8 +14,8 @@ public class CreateUserScreen implements Screen {
 
     @Override
     public Screen show(ConfigurableApplicationContext context) {
-        User user = UserReader.readByConsole();
-        context.getBean("userService", UserService.class).addUser(user);
+        UserCreateDto dto = UserReader.readByConsole();
+        context.getBean("userService", UserService.class).addUser(dto);
         return context.getBean("mainScreen", Screen.class);
     }
 

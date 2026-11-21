@@ -2,17 +2,19 @@ package Step2.Module2.Models;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Scope("Prototype")
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  id;
+    private Integer id;
 
     private String name;
 

@@ -1,5 +1,6 @@
 package Step2.Module2.UI;
 
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +13,7 @@ import java.util.*;
 
 public class  UserFindScreen implements Screen {
 
-    private static LinkedList<User> users = new LinkedList<>();
+    private static LinkedList<UserViewDto> users = new LinkedList<>();
 
     @Override
     public Screen show(ConfigurableApplicationContext context) {
@@ -58,11 +59,9 @@ public class  UserFindScreen implements Screen {
         return context.getBean("mainScreen", Screen.class);
     }
 
-    private static void printUsers(LinkedList<User> users) {
+    private static void printUsers(LinkedList<UserViewDto> users) {
         if (!users.isEmpty()) {
-            for (User user : users) {
-                System.out.println(user);
-            }
+            users.stream().forEach(System.out::println);
         } else System.out.println("Пользователей с таким полем не найдено");
         System.out.println("Press any key to continue...");
         new Scanner(System.in).nextLine();
@@ -103,7 +102,7 @@ public class  UserFindScreen implements Screen {
             }
         }
 
-        for (User user : context.getBean(UserService.class).findUserByName(name)) users.addLast(user);
+        for (UserViewDto dto : context.getBean(UserService.class).findUserByName(name)) users.addLast(dto);
     }
 
     private static void userFindByEmail(ConfigurableApplicationContext context) {
@@ -121,7 +120,7 @@ public class  UserFindScreen implements Screen {
             }
         }
 
-        for (User user : context.getBean(UserService.class).findUserByEmail(email)) users.addLast(user);
+        for (UserViewDto dto : context.getBean(UserService.class).findUserByEmail(email)) users.addLast(dto);
     }
 
     private static void userFindByAge(ConfigurableApplicationContext context) {
@@ -139,12 +138,12 @@ public class  UserFindScreen implements Screen {
             }
         }
 
-        List<User> usersByAge = context.getBean(UserService.class).findUsersByAge(age);
-        if (usersByAge != null) for (User user : usersByAge) users.addLast(user);
+        List<UserViewDto> usersByAge = context.getBean(UserService.class).findUsersByAge(age);
+        if (usersByAge != null) for (UserViewDto dto : usersByAge) users.addLast(dto);
     }
 
     private static void findAll(ConfigurableApplicationContext context) {
-        for (User user : context.getBean(UserService.class).findAll()) users.addLast(user);
+        for (UserViewDto dto : context.getBean(UserService.class).findAll()) users.addLast(dto);
     }
 
 }

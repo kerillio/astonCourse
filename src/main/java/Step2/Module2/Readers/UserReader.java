@@ -1,5 +1,6 @@
 package Step2.Module2.Readers;
 
+import Step2.Module2.DTO.UserCreateDto;
 import Step2.Module2.Models.User;
 import org.springframework.stereotype.Component;
 
@@ -7,23 +8,22 @@ import java.util.Scanner;
 
 public class UserReader {
 
-    public static User readByConsole() {
+    public static UserCreateDto readByConsole() {
         Scanner sc = new Scanner(System.in);
-        User user = new User();
 
         System.out.println("Enter username: ");
-        user.setName(readLine(sc));
+        String name = readLine(sc);
 
         System.out.println("Enter email: ");
-        user.setEmail(readLine(sc));
+        String email = readLine(sc);
 
         System.out.println("Enter age: ");
+        Integer age = 0;
         try {
-            user.setAge(Integer.parseInt(readLine(sc)));
-        } catch (NumberFormatException e) {
-            user.setAge(0);
-        }
-        return user;
+            age = Integer.parseInt(readLine(sc));
+        } catch (NumberFormatException e) {}
+
+        return new UserCreateDto(name, email, age);
 
     }
 
