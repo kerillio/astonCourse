@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Config/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="переделал проект на SpringBoot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
@@ -23,6 +19,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,66 +74,63 @@
     &quot;repository&quot;: &quot;astonCourse&quot;
   }
 }</component>
-  <component name="MavenRunner">
-    <option name="delegateBuildToMaven" value="true" />
-  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0007932152308165" />
-      <entry key="MS500" value="1.2398160298313161" />
-      <entry key="S2" value="1.699792932797598" />
-      <entry key="S5" value="1.8669379817742255" />
-      <entry key="S10" value="1.9320004319653015" />
-      <entry key="S30" value="2.1353975275445594" />
-      <entry key="S60" value="2.7164798970209696" />
-      <entry key="M2" value="4.625944965044263" />
-      <entry key="M5" value="14.30596517615496" />
-      <entry key="M10" value="29.329096919422714" />
-      <entry key="M15" value="39.97748630096998" />
-      <entry key="M30" value="59.70340912194523" />
-      <entry key="H1" value="84.78222570078327" />
-      <entry key="H2" value="115.26558649623551" />
-      <entry key="H4" value="144.63200756369412" />
-      <entry key="D1" value="377.4036847710257" />
-      <entry key="W1" value="988.3868084391748" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000113494192" />
+      <entry key="S30" value="1.0041352832103136" />
+      <entry key="S60" value="1.1209927837034452" />
+      <entry key="M2" value="1.7289358855642554" />
+      <entry key="M5" value="3.972794269790878" />
+      <entry key="M10" value="10.679893769202653" />
+      <entry key="M15" value="19.68471241958499" />
+      <entry key="M30" value="44.593229141462345" />
+      <entry key="H1" value="79.04638169005422" />
+      <entry key="H2" value="119.12830582603081" />
+      <entry key="H4" value="156.86710917070693" />
+      <entry key="D1" value="398.18842331678263" />
+      <entry key="W1" value="1013.1118466924812" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="9.677530787347454E-158" />
-      <entry key="MS500" value="3.955058506805437E-32" />
-      <entry key="S2" value="1.414404340508909E-8" />
-      <entry key="S5" value="7.969296639082322E-4" />
-      <entry key="S10" value="0.03736760506640933" />
-      <entry key="S30" value="0.7593450578339357" />
-      <entry key="S60" value="2.1157193457537646" />
-      <entry key="M2" value="4.723109509921383" />
-      <entry key="M5" value="12.4009952327456" />
-      <entry key="M10" value="22.4285857429713" />
-      <entry key="M15" value="29.096129007688663" />
-      <entry key="M30" value="41.82747572204504" />
-      <entry key="H1" value="63.37607994917669" />
-      <entry key="H2" value="95.75370238332499" />
-      <entry key="H4" value="128.24259187157975" />
-      <entry key="D1" value="267.56919110768166" />
-      <entry key="W1" value="560.1092344302513" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="7.909173077741087E-309" />
+      <entry key="S2" value="1.11861617243372E-77" />
+      <entry key="S5" value="2.33875536675169E-31" />
+      <entry key="S10" value="6.746519187673035E-16" />
+      <entry key="S30" value="1.3879117302508161E-5" />
+      <entry key="S60" value="0.005266613659092536" />
+      <entry key="M2" value="0.1037190424923407" />
+      <entry key="M5" value="1.0990865899355187" />
+      <entry key="M10" value="5.936479090248751" />
+      <entry key="M15" value="12.582643417651186" />
+      <entry key="M30" value="30.56292339762379" />
+      <entry key="H1" value="58.12888732260973" />
+      <entry key="H2" value="96.36853017944227" />
+      <entry key="H4" value="135.1547177576874" />
+      <entry key="D1" value="283.1124888513285" />
+      <entry key="W1" value="578.8070048157982" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.925523726780079E-4" />
-      <entry key="MS500" value="0.2880464879535339" />
-      <entry key="S2" value="1.1580023261014198" />
-      <entry key="S5" value="1.598844111968767" />
-      <entry key="S10" value="1.8203862306942282" />
-      <entry key="S30" value="2.811879082619974" />
-      <entry key="S60" value="4.760403542935998" />
-      <entry key="M2" value="9.279755674307252" />
-      <entry key="M5" value="26.618860970535003" />
-      <entry key="M10" value="51.66288832905721" />
-      <entry key="M15" value="68.98649228034957" />
-      <entry key="M30" value="101.46630962852903" />
-      <entry key="H1" value="148.11311551946903" />
-      <entry key="H2" value="210.988649850386" />
-      <entry key="H4" value="272.85541867896046" />
-      <entry key="D1" value="644.9654707167105" />
-      <entry key="W1" value="1548.4934707707241" />
+      <entry key="MS100" value="2.2465518814083848E-4" />
+      <entry key="MS500" value="0.18633879834986503" />
+      <entry key="S2" value="0.6570158135746855" />
+      <entry key="S5" value="0.8453378774563512" />
+      <entry key="S10" value="0.9194225891936105" />
+      <entry key="S30" value="0.9764928903652446" />
+      <entry key="S60" value="1.111796163863653" />
+      <entry key="M2" value="1.823699248740069" />
+      <entry key="M5" value="5.062784307231741" />
+      <entry key="M10" value="16.59519065119158" />
+      <entry key="M15" value="32.23581043611982" />
+      <entry key="M30" value="75.11518657441177" />
+      <entry key="H1" value="137.13718255006503" />
+      <entry key="H2" value="215.4673365899359" />
+      <entry key="H4" value="292.00214227712985" />
+      <entry key="D1" value="681.2932255222862" />
+      <entry key="W1" value="1591.9162277737962" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -152,7 +149,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Coverage",
+    "Application.Main.executor": "Run",
     "JUnit.UserDaoImplTest.executor": "Run",
     "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
     "Maven.Main.executor": "Run",
@@ -185,7 +182,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -269,13 +266,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="-Dexec.workingdir=F:\IdeaProjects\astonCourse" />
+                <option value="-Dexec.args=-classpath %classpath Step2.Module2.Main" />
+                <option value="-Dexec.executable=C:\Users\keril\.jdks\openjdk-26.0.2.1\bin\java.exe" />
+                <option value="exec:exec" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map>
+                <entry key="X" value="false" />
+              </map>
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserDaoImplTest.saveAndUpdateUser" />
         <item itemvalue="JUnit.UserDaoImplTest.saveAndFindUser" />
         <item itemvalue="JUnit.UserDaoImplTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -321,7 +353,8 @@
     <MESSAGE value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
     <MESSAGE value="теперь интеграционные тесты работают через docker" />
     <MESSAGE value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
+    <MESSAGE value="переделал проект на SpringBoot" />
+    <option name="LAST_COMMIT_MESSAGE" value="переделал проект на SpringBoot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

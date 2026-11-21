@@ -2,6 +2,7 @@ package Step2.Module2.UI;
 
 import Step2.Module2.Service.UserService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ public class RemoveUserScreen implements Screen {
 
 
     @Override
-    public Screen show(AnnotationConfigApplicationContext context) {
+    public Screen show(ConfigurableApplicationContext context) {
         System.out.println("Введите id, по которому будет удален user");
         boolean success = false;
         while (!success) {

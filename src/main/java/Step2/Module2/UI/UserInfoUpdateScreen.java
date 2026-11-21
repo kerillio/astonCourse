@@ -3,6 +3,7 @@ package Step2.Module2.UI;
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import java.util.Scanner;
 public class UserInfoUpdateScreen implements Screen {
 
     @Override
-    public Screen show(AnnotationConfigApplicationContext context) {
+    public Screen show(ConfigurableApplicationContext context) {
 
         System.out.println("Введите id пользователя, информацию о котором надо изменить:");
         boolean successRead = false;

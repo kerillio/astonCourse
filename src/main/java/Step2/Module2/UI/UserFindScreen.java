@@ -3,6 +3,7 @@ package Step2.Module2.UI;
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ public class  UserFindScreen implements Screen {
     private static LinkedList<User> users = new LinkedList<>();
 
     @Override
-    public Screen show(AnnotationConfigApplicationContext context) {
+    public Screen show(ConfigurableApplicationContext context) {
 
         users.clear();
         System.out.println("Выберите поле, по которому будем искать пользователей:");
@@ -67,7 +68,7 @@ public class  UserFindScreen implements Screen {
         new Scanner(System.in).nextLine();
     }
 
-    private static void userFindById(AnnotationConfigApplicationContext context) {
+    private static void userFindById(ConfigurableApplicationContext context) {
         System.out.println("Введите Id:");
         boolean successRead = false;
         int id = 0;
@@ -87,7 +88,7 @@ public class  UserFindScreen implements Screen {
         users.addLast(context.getBean(UserService.class).findUserById(id));
     }
 
-    private static void userFindByName(AnnotationConfigApplicationContext context) {
+    private static void userFindByName(ConfigurableApplicationContext context) {
         System.out.println("Введите name:");
         boolean successRead = false;
         String name = null;
@@ -105,7 +106,7 @@ public class  UserFindScreen implements Screen {
         for (User user : context.getBean(UserService.class).findUserByName(name)) users.addLast(user);
     }
 
-    private static void userFindByEmail(AnnotationConfigApplicationContext context) {
+    private static void userFindByEmail(ConfigurableApplicationContext context) {
         System.out.println("Введите email:");
         boolean successRead = false;
         String email = null;
@@ -123,7 +124,7 @@ public class  UserFindScreen implements Screen {
         for (User user : context.getBean(UserService.class).findUserByEmail(email)) users.addLast(user);
     }
 
-    private static void userFindByAge(AnnotationConfigApplicationContext context) {
+    private static void userFindByAge(ConfigurableApplicationContext context) {
         System.out.println("Введите age:");
         boolean successRead = false;
         int age = 0;
@@ -142,7 +143,7 @@ public class  UserFindScreen implements Screen {
         if (usersByAge != null) for (User user : usersByAge) users.addLast(user);
     }
 
-    private static void findAll(AnnotationConfigApplicationContext context) {
+    private static void findAll(ConfigurableApplicationContext context) {
         for (User user : context.getBean(UserService.class).findAll()) users.addLast(user);
     }
 

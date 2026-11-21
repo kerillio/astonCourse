@@ -1,6 +1,7 @@
 package Step2.Module2.UI;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class MainScreen implements Screen {
 
     @Override
-    public Screen show (AnnotationConfigApplicationContext context){
+    public Screen show (ConfigurableApplicationContext context){
         System.out.println("Выберите действие (введите цифру): ");
         System.out.println("1. Создать нового user, записать его в базу");
         System.out.println("2. Найти одного или несколько user (с выбором поля поиска)");
