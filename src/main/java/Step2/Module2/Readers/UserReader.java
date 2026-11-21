@@ -1,6 +1,7 @@
 package Step2.Module2.Readers;
 
 import Step2.Module2.Models.User;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 

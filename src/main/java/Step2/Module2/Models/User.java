@@ -2,9 +2,9 @@ package Step2.Module2.Models;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-
 
 @Entity
 @Table(name = "users")
@@ -34,7 +34,6 @@ public class User {
         this.name = name;
         this.email = email;
         this.age = age;
-        this.created_at = created_at;
     }
 
     public User (User user) {

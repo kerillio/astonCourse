@@ -6,6 +6,8 @@ import jakarta.persistence.Query;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,6 +17,7 @@ public class UserDaoImpl implements UserDao<User> {
 
     private static Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
     private static SessionFactory sessionFactory;
+
 
     public UserDaoImpl () {
         this.sessionFactory = HibernateSessionFactoryUtil.getSessionFactory();

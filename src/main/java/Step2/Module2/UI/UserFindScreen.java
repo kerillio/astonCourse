@@ -2,15 +2,19 @@ package Step2.Module2.UI;
 
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-public class UserFindScreen implements Screen {
+
+public class  UserFindScreen implements Screen {
 
     private static LinkedList<User> users = new LinkedList<>();
 
     @Override
-    public Screen show() {
+    public Screen show(AnnotationConfigApplicationContext context) {
 
         users.clear();
         System.out.println("Выберите поле, по которому будем искать пользователей:");
@@ -35,22 +39,22 @@ public class UserFindScreen implements Screen {
         }
 
         switch (choice) {
-            case 1: userFindById();
+            case 1: userFindById(context);
                 break;
-            case 2: userFindByName();
+            case 2: userFindByName(context);
                 break;
-            case 3: userFindByEmail();
+            case 3: userFindByEmail(context);
                 break;
-            case 4: userFindByAge();
+            case 4: userFindByAge(context);
                 break;
-            case 5: findAll();
+            case 5: findAll(context);
                 break;
-            case 0: return new MainScreen();
+            case 0: return context.getBean("mainScreen", Screen.class);
         }
 
         printUsers(users);
 
-        return new MainScreen();
+        return context.getBean("mainScreen", Screen.class);
     }
 
     private static void printUsers(LinkedList<User> users) {
@@ -63,7 +67,7 @@ public class UserFindScreen implements Screen {
         new Scanner(System.in).nextLine();
     }
 
-    private static void userFindById() {
+    private static void userFindById(AnnotationConfigApplicationContext context) {
         System.out.println("Введите Id:");
         boolean successRead = false;
         int id = 0;
@@ -79,10 +83,11 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        users.addLast(UserService.findUserById(id));
+
+        users.addLast(context.getBean(UserService.class).findUserById(id));
     }
 
-    private static void userFindByName() {
+    private static void userFindByName(AnnotationConfigApplicationContext context) {
         System.out.println("Введите name:");
         boolean successRead = false;
         String name = null;
@@ -97,10 +102,10 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUserByName(name)) users.addLast(user);
+        for (User user : context.getBean(UserService.class).findUserByName(name)) users.addLast(user);
     }
 
-    private static void userFindByEmail() {
+    private static void userFindByEmail(AnnotationConfigApplicationContext context) {
         System.out.println("Введите email:");
         boolean successRead = false;
         String email = null;
@@ -115,10 +120,10 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUserByEmail(email)) users.addLast(user);
+        for (User user : context.getBean(UserService.class).findUserByEmail(email)) users.addLast(user);
     }
 
-    private static void userFindByAge() {
+    private static void userFindByAge(AnnotationConfigApplicationContext context) {
         System.out.println("Введите age:");
         boolean successRead = false;
         int age = 0;
@@ -133,12 +138,12 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        List<User> usersByAge = UserService.findUsersByAge(age);
+        List<User> usersByAge = context.getBean(UserService.class).findUsersByAge(age);
         if (usersByAge != null) for (User user : usersByAge) users.addLast(user);
     }
 
-    private static void findAll() {
-        for (User user : UserService.findAll()) users.addLast(user);
+    private static void findAll(AnnotationConfigApplicationContext context) {
+        for (User user : context.getBean(UserService.class).findAll()) users.addLast(user);
     }
 
 }

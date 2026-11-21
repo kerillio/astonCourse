@@ -1,29 +1,34 @@
 package Step2.Module2.Service;
 
-import Step2.Module2.DAO.UserDao;
-import Step2.Module2.DAO.UserDaoImpl;
 import Step2.Module2.Models.User;
+import Step2.Module2.Repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
+import java.util.Optional;
 
+@Service
+@Transactional(readOnly = true)
 public class UserService {
-    
+
+    private final UserRepository userRepository;
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
-    private static UserDao<User> userDao = new UserDaoImpl();
 
-    public UserService() {
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public UserService (UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     public User getUser() {
         return new User();
     }
 
-    public static void addUser(User user) {
+    @Transactional
+    public void addUser(User user) {
         if (user.getName().isEmpty()) {
             log.warn("user.name is empty");
         } else if (user.getAge() < 0) {
@@ -31,12 +36,12 @@ public class UserService {
         } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userDao.save(user);
+            userRepository.save(user);
         }
 
     }
 
-    public static void updateUser (User user) {
+    public void updateUser (User user) {
         if (user.getName().isEmpty()) {
             log.warn("Name is empty");
         } else if (user.getAge() < 0) {
@@ -44,45 +49,47 @@ public class UserService {
         } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userDao.update(user);
+            userRepository.save(user);
         }
     }
 
-    public static void removeUserById(int id) {
+    public void removeUserById(int id) {
         if (id > 0) {
-            userDao.delete(id);
+            userRepository.deleteById((long) id);
         }
     }
 
-    public static List<User> findAll() {
-        return userDao.findAll();
+    public  List<User> findAll() {
+        return userRepository.findAll();
     }
 
-    public static User findUserById(int id) {
+    public User findUserById(int id) {
         if (id > 0) {
-            return userDao.findById(id);
+            Optional<User> foundUser = userRepository.findById((long) id);
+            if (foundUser.isPresent()) return foundUser.get();
+            else return null;
         } else return null;
     }
 
-    public static List<User> findUserByName(String name) {
+    public List<User> findUserByName(String name) {
         if (name.isEmpty()) {
             log.warn("name is empty");
             return null;
-        } else return userDao.findByName(name);
+        } else return userRepository.findByName(name);
     }
 
-    public static List<User> findUserByEmail(String email) {
+    public List<User> findUserByEmail(String email) {
         if (email.isEmpty()) {
             log.warn("email is empty");
             return null;
-        } else return userDao.findByEmail(email);
+        } else return userRepository.findByEmail(email);
     }
 
-    public static List<User> findUsersByAge(int age) {
+    public List<User> findUsersByAge(int age) {
         if (age < 1) {
             log.warn("Age is incorrect");
             return null;
-        } else return userDao.findUserByAge(age);
+        } else return userRepository.findUserByAge(age);
     }
 
 }

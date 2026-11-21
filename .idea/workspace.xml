@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="теперь интеграционные тесты работают через docker">
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/HibernateSessionFactoryUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/ExitScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -38,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Step2.SQL_userDB_rebuildind" />
+        <entry key="$PROJECT_DIR$" value="Step2.Module3.DAO_service_tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,61 +79,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000287117342381" />
-      <entry key="S2" value="1.0732006363261757" />
-      <entry key="S5" value="1.351403386528502" />
-      <entry key="S10" value="1.5927928698360854" />
-      <entry key="S30" value="1.8400419810065909" />
-      <entry key="S60" value="1.916538064702323" />
-      <entry key="M2" value="1.957862302188122" />
-      <entry key="M5" value="2.3179847768055533" />
-      <entry key="M10" value="6.630275946206577" />
-      <entry key="M15" value="14.541515897565969" />
-      <entry key="M30" value="38.381287091964985" />
-      <entry key="H1" value="65.58669435735061" />
-      <entry key="H2" value="86.63339835178361" />
-      <entry key="H4" value="103.58037075628829" />
-      <entry key="D1" value="385.6866965133412" />
-      <entry key="W1" value="871.4017543481909" />
+      <entry key="MS100" value="1.0007932152308165" />
+      <entry key="MS500" value="1.2398160298313161" />
+      <entry key="S2" value="1.699792932797598" />
+      <entry key="S5" value="1.8669379817742255" />
+      <entry key="S10" value="1.9320004319653015" />
+      <entry key="S30" value="2.1353975275445594" />
+      <entry key="S60" value="2.7164798970209696" />
+      <entry key="M2" value="4.625944965044263" />
+      <entry key="M5" value="14.30596517615496" />
+      <entry key="M10" value="29.329096919422714" />
+      <entry key="M15" value="39.97748630096998" />
+      <entry key="M30" value="59.70340912194523" />
+      <entry key="H1" value="84.78222570078327" />
+      <entry key="H2" value="115.26558649623551" />
+      <entry key="H4" value="144.63200756369412" />
+      <entry key="D1" value="377.4036847710257" />
+      <entry key="W1" value="988.3868084391748" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.501047951373758E-52" />
-      <entry key="MS500" value="5.438109050239823E-11" />
-      <entry key="S2" value="0.003586709721852544" />
-      <entry key="S5" value="0.15389913711603467" />
-      <entry key="S10" value="0.5513426871340448" />
-      <entry key="S30" value="1.2998231673833345" />
-      <entry key="S60" value="1.6120582683426177" />
-      <entry key="M2" value="1.7956622735878796" />
-      <entry key="M5" value="2.033602945418797" />
-      <entry key="M10" value="3.7912790515480084" />
-      <entry key="M15" value="7.199544626556368" />
-      <entry key="M30" value="18.037820518571877" />
-      <entry key="H1" value="30.90375245154051" />
-      <entry key="H2" value="41.080958595047946" />
-      <entry key="H4" value="49.788565743977344" />
-      <entry key="D1" value="198.63046990168527" />
-      <entry key="W1" value="422.0508843434005" />
+      <entry key="MS100" value="9.677530787347454E-158" />
+      <entry key="MS500" value="3.955058506805437E-32" />
+      <entry key="S2" value="1.414404340508909E-8" />
+      <entry key="S5" value="7.969296639082322E-4" />
+      <entry key="S10" value="0.03736760506640933" />
+      <entry key="S30" value="0.7593450578339357" />
+      <entry key="S60" value="2.1157193457537646" />
+      <entry key="M2" value="4.723109509921383" />
+      <entry key="M5" value="12.4009952327456" />
+      <entry key="M10" value="22.4285857429713" />
+      <entry key="M15" value="29.096129007688663" />
+      <entry key="M30" value="41.82747572204504" />
+      <entry key="H1" value="63.37607994917669" />
+      <entry key="H2" value="95.75370238332499" />
+      <entry key="H4" value="128.24259187157975" />
+      <entry key="D1" value="267.56919110768166" />
+      <entry key="W1" value="560.1092344302513" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3877787807814488E-17" />
-      <entry key="MS500" value="4.2507361532597397E-4" />
-      <entry key="S2" value="0.14866575211299132" />
-      <entry key="S5" value="0.6821891130432635" />
-      <entry key="S10" value="1.4871848861652497" />
-      <entry key="S30" value="2.812769525283464" />
-      <entry key="S60" value="3.3455548935554185" />
-      <entry key="M2" value="3.656516401554106" />
-      <entry key="M5" value="4.310082189596111" />
-      <entry key="M10" value="10.391513726508197" />
-      <entry key="M15" value="21.70949307234153" />
-      <entry key="M30" value="56.38563193368844" />
-      <entry key="H1" value="96.46349294735207" />
-      <entry key="H2" value="127.69690010445586" />
-      <entry key="H4" value="153.35850155584384" />
-      <entry key="D1" value="584.3102135170549" />
-      <entry key="W1" value="1293.450448102877" />
+      <entry key="MS100" value="8.925523726780079E-4" />
+      <entry key="MS500" value="0.2880464879535339" />
+      <entry key="S2" value="1.1580023261014198" />
+      <entry key="S5" value="1.598844111968767" />
+      <entry key="S10" value="1.8203862306942282" />
+      <entry key="S30" value="2.811879082619974" />
+      <entry key="S60" value="4.760403542935998" />
+      <entry key="M2" value="9.279755674307252" />
+      <entry key="M5" value="26.618860970535003" />
+      <entry key="M10" value="51.66288832905721" />
+      <entry key="M15" value="68.98649228034957" />
+      <entry key="M30" value="101.46630962852903" />
+      <entry key="H1" value="148.11311551946903" />
+      <entry key="H2" value="210.988649850386" />
+      <entry key="H4" value="272.85541867896046" />
+      <entry key="D1" value="644.9654707167105" />
+      <entry key="W1" value="1548.4934707707241" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -142,43 +150,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveAndFindUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.saveAndUpdateUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [process-test-classes].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [validate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Step2.Module3.DAO__service__tests&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;F:/IdeaProjects/astonCourse/src/main/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Coverage",
+    "JUnit.UserDaoImplTest.executor": "Run",
+    "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
+    "Maven.Main.executor": "Run",
+    "Maven.UserDaoImplTest.executor": "Run",
+    "Maven.UserDaoImplTest.saveAndUpdateUser.executor": "Run",
+    "Maven.UserServiceTest.executor": "Run",
+    "Maven.astonCourse [clean].executor": "Run",
+    "Maven.astonCourse [compile].executor": "Run",
+    "Maven.astonCourse [deploy].executor": "Run",
+    "Maven.astonCourse [process-test-classes].executor": "Run",
+    "Maven.astonCourse [test].executor": "Run",
+    "Maven.astonCourse [validate].executor": "Run",
+    "Maven.astonCourse [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "Step2.Build__by__SpringBoot",
+    "git.auto.fetch.suggestion.counter": "2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
@@ -262,11 +271,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UserDaoImplTest.saveAndUpdateUser" />
         <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserDaoImplTest" />
+        <item itemvalue="JUnit.UserDaoImplTest.saveAndUpdateUser" />
         <item itemvalue="JUnit.UserDaoImplTest.saveAndFindUser" />
+        <item itemvalue="JUnit.UserDaoImplTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +320,8 @@
     <MESSAGE value="created unit test" />
     <MESSAGE value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
     <MESSAGE value="теперь интеграционные тесты работают через docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="теперь интеграционные тесты работают через docker" />
+    <MESSAGE value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
+    <option name="LAST_COMMIT_MESSAGE" value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

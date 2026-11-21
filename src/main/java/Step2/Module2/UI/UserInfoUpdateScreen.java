@@ -2,15 +2,19 @@ package Step2.Module2.UI;
 
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+
 public class UserInfoUpdateScreen implements Screen {
 
     @Override
-    public Screen show() {
+    public Screen show(AnnotationConfigApplicationContext context) {
 
         System.out.println("Введите id пользователя, информацию о котором надо изменить:");
         boolean successRead = false;
@@ -27,7 +31,7 @@ public class UserInfoUpdateScreen implements Screen {
             }
         }
 
-        User user = UserService.findUserById(id);
+        User user = context.getBean(UserService.class).findUserById(id);
 
         System.out.println("Найден:");
         System.out.println(user);
@@ -55,9 +59,9 @@ public class UserInfoUpdateScreen implements Screen {
         } else if (choice == 2) {
             emailUpdate(user);
         }
-        UserService.updateUser(user);
+        context.getBean(UserService.class).updateUser(user);
 
-        return new MainScreen();
+        return context.getBean("mainScreen", Screen.class);
     }
 
     private void emailUpdate(User user) {
