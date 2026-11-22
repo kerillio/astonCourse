@@ -70,21 +70,19 @@ public class  UserFindScreen implements Screen {
     private static void userFindById(ConfigurableApplicationContext context) {
         System.out.println("Введите Id:");
         boolean successRead = false;
-        int id = 0;
+        Long id;
         while (!successRead) {
             try {
                 Scanner sc = new Scanner(System.in);
-                id = sc.nextInt();
+                id = sc.nextLong();
                 if (id > 0) successRead = true;
                 else System.out.println("incorrect id");
+                users.addLast(context.getBean(UserService.class).findUserById(id));
 
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             }
         }
-
-
-        users.addLast(context.getBean(UserService.class).findUserById(id));
     }
 
     private static void userFindByName(ConfigurableApplicationContext context) {

@@ -22,20 +22,21 @@ public class UserInfoUpdateScreen implements Screen {
 
         System.out.println("Введите id пользователя, информацию о котором надо изменить:");
         boolean successRead = false;
-        int id = 0;
+        Optional<UserViewDto> foundUser = Optional.empty();
+        Long id;
         while (!successRead) {
             try {
                 Scanner sc = new Scanner(System.in);
-                id = sc.nextInt();
+                id = sc.nextLong();
                 if (id > 0) successRead = true;
                 else System.out.println("incorrect id");
-
+                foundUser = Optional.ofNullable(context.getBean(UserService.class).findUserById(id));
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             }
         }
 
-        Optional<UserViewDto> foundUser = Optional.ofNullable(context.getBean(UserService.class).findUserById(id));
+
 
         if (foundUser.isEmpty()) System.out.println("User not found");
         else {

@@ -20,7 +20,7 @@ public class RemoveUserScreen implements Screen {
         while (!success) {
             try {
                 Scanner scanner = new Scanner(System.in);
-                int userId = scanner.nextInt();
+                Long userId = scanner.nextLong();
                 if (userId > 0)
                 {
                     success = true;

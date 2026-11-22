@@ -66,19 +66,19 @@ public class UserService {
     }
 
     @Transactional
-    public void removeUserById(int id) {
+    public void removeUserById(Long id) {
         if (id > 0) {
-            userRepository.deleteById((long) id);
+            userRepository.deleteById(id);
         }
     }
 
-    public  List<UserViewDto> findAll() {
+    public List<UserViewDto> findAll() {
         return userRepository.findAll().stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public UserViewDto findUserById(int id) {
+    public UserViewDto findUserById(Long id) {
         if (id > 0) {
-            Optional<User> foundUser = userRepository.findById((long) id);
+            Optional<User> foundUser = userRepository.findById(id);
             return foundUser.map(UserViewDto::fromEntity).orElse(null);
         } else return null;
     }

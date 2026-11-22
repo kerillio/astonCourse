@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="успешный запуск и ручная работа. пока без тестов">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step1/module2/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step1/module2/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserCreateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserUpdateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserViewDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserViewDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser">
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,61 +63,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.6813737730050832E-5" />
-      <entry key="MS500" value="0.11095141715868721" />
-      <entry key="S2" value="0.5771427087584446" />
-      <entry key="S5" value="0.8026313518315958" />
-      <entry key="S10" value="0.8998473734262016" />
-      <entry key="S30" value="1.4245238390339103" />
-      <entry key="S60" value="2.6576337039137474" />
-      <entry key="M2" value="4.42549359257565" />
-      <entry key="M5" value="7.65814130887717" />
-      <entry key="M10" value="14.520830198843708" />
-      <entry key="M15" value="23.11364225215685" />
-      <entry key="M30" value="49.658435324417624" />
-      <entry key="H1" value="95.83851041833695" />
-      <entry key="H2" value="161.8684868865561" />
-      <entry key="H4" value="233.14434592682053" />
-      <entry key="D1" value="520.7676042700379" />
-      <entry key="W1" value="1155.7636216907958" />
+      <entry key="MS100" value="5.577449841789996E-228" />
+      <entry key="MS500" value="3.545530122656818E-46" />
+      <entry key="S2" value="5.580802915155987E-12" />
+      <entry key="S5" value="5.466953388819812E-5" />
+      <entry key="S10" value="0.012663332382261113" />
+      <entry key="S30" value="0.5949175303255713" />
+      <entry key="S60" value="2.425373427675872" />
+      <entry key="M2" value="7.514891357848584" />
+      <entry key="M5" value="19.583625284038572" />
+      <entry key="M10" value="31.79049228343406" />
+      <entry key="M15" value="42.02874029883291" />
+      <entry key="M30" value="70.2312463923031" />
+      <entry key="H1" value="118.07001427435357" />
+      <entry key="H2" value="186.49723315765507" />
+      <entry key="H4" value="260.798021521576" />
+      <entry key="D1" value="553.107497791826" />
+      <entry key="W1" value="1189.9337019131979" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000000000027957" />
-      <entry key="S5" value="1.0000603957148761" />
-      <entry key="S10" value="1.0087901256238496" />
-      <entry key="S30" value="1.4673176323220367" />
-      <entry key="S60" value="2.749746675019761" />
-      <entry key="M2" value="5.189000874212868" />
-      <entry key="M5" value="12.483859183349375" />
-      <entry key="M10" value="28.008055462887977" />
-      <entry key="M15" value="43.24067276642668" />
-      <entry key="M30" value="79.58847264927536" />
-      <entry key="H1" value="128.94994219543827" />
-      <entry key="H2" value="192.5467838518742" />
-      <entry key="H4" value="261.15183846299294" />
-      <entry key="D1" value="456.951292050747" />
-      <entry key="W1" value="769.582129995539" />
+      <entry key="S2" value="1.0000064422675128" />
+      <entry key="S5" value="1.0083871710827146" />
+      <entry key="S10" value="1.0915816078746199" />
+      <entry key="S30" value="1.455541057948467" />
+      <entry key="S60" value="1.748750028392671" />
+      <entry key="M2" value="2.334789677438172" />
+      <entry key="M5" value="6.118095674996649" />
+      <entry key="M10" value="17.55541894936612" />
+      <entry key="M15" value="31.033374804921596" />
+      <entry key="M30" value="67.28994908858392" />
+      <entry key="H1" value="119.25891949403243" />
+      <entry key="H2" value="186.31448600272333" />
+      <entry key="H4" value="258.4438459364494" />
+      <entry key="D1" value="459.6833853991534" />
+      <entry key="W1" value="774.0363441940898" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.984961615474942E-4" />
-      <entry key="MS500" value="0.19833235814332184" />
-      <entry key="S2" value="0.8483539641557576" />
-      <entry key="S5" value="1.3559998717689326" />
-      <entry key="S10" value="1.645089645246444" />
-      <entry key="S30" value="2.765742285799315" />
-      <entry key="S60" value="5.300869543740622" />
-      <entry key="M2" value="9.524409353403495" />
-      <entry key="M5" value="20.06838575239991" />
-      <entry key="M10" value="42.45071496130186" />
-      <entry key="M15" value="66.27308441669196" />
-      <entry key="M30" value="129.1684506174238" />
-      <entry key="H1" value="224.72127855359767" />
-      <entry key="H2" value="354.36342218618347" />
-      <entry key="H4" value="494.2607311362555" />
-      <entry key="D1" value="977.7074966839747" />
-      <entry key="W1" value="1925.3425377517233" />
+      <entry key="MS100" value="3.4088401495144374E-10" />
+      <entry key="MS500" value="0.012779719664965326" />
+      <entry key="S2" value="0.3362295782523844" />
+      <entry key="S5" value="0.6538217936830206" />
+      <entry key="S10" value="0.900511156292547" />
+      <entry key="S30" value="1.9550314114770542" />
+      <entry key="S60" value="4.105129604062753" />
+      <entry key="M2" value="9.795554057554888" />
+      <entry key="M5" value="25.652169012291058" />
+      <entry key="M10" value="49.28799553871871" />
+      <entry key="M15" value="72.99748369568168" />
+      <entry key="M30" value="137.45165152196955" />
+      <entry key="H1" value="237.26527197655932" />
+      <entry key="H2" value="372.76080860825545" />
+      <entry key="H4" value="519.2064136474104" />
+      <entry key="D1" value="1012.7793651159031" />
+      <entry key="W1" value="1963.9668094395045" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -151,7 +143,10 @@
     "JUnit.UserServiceTest.emptyNameReturnEmptyOptional.executor": "Run",
     "JUnit.UserServiceTest.executor": "Run",
     "JUnit.UserServiceTest.incorrectAge_ReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyEmailException.executor": "Run",
     "JUnit.UserServiceTest.update_EmptyNameException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidAgeException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidEmailException.executor": "Run",
     "JUnit.UserServiceTest.update_UpdateEmailReturnNewDto.executor": "Run",
     "JUnit.UserServiceTest.update_UpdateNameReturnNewDto.executor": "Run",
     "Maven.Main.executor": "Run",
@@ -372,7 +367,8 @@
     <MESSAGE value="теперь интеграционные тесты работают через docker" />
     <MESSAGE value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
     <MESSAGE value="переделал проект на SpringBoot" />
-    <option name="LAST_COMMIT_MESSAGE" value="переделал проект на SpringBoot" />
+    <MESSAGE value="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
