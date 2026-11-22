@@ -2,11 +2,11 @@
 <configuration>
 
     <!-- Вывод в консоль с подсветкой уровней -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
-        </encoder>
-    </appender>
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
     <!-- Запись в файл с ротацией по дням и ограничением размера -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -31,18 +31,18 @@
 
     <!-- Логгер только для SQL-запросов Hibernate -->
     <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
-        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="CONSOLE" />-->
         <appender-ref ref="FILE" />
     </logger>
 
     <!-- Логгер для параметров SQL (значения вместо '?') -->
     <logger name="org.hibernate.orm.jdbc.bind" level="TRACE" additivity="false">
-        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="CONSOLE" />-->
     </logger>
 
     <!-- Корневой логгер для всего приложения и остальных библиотек -->
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="CONSOLE" />-->
         <appender-ref ref="FILE" />
     </root>
 

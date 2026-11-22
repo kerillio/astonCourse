@@ -1,19 +1,18 @@
 package Step2.Module2.UI;
 
-import Step2.Module2.Models.User;
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Service.UserService;
+import org.springframework.context.ConfigurableApplicationContext;
 
-import java.util.InputMismatchException;
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
-public class UserFindScreen implements Screen {
 
-    private static LinkedList<User> users = new LinkedList<>();
+public class  UserFindScreen implements Screen {
+
+    private static LinkedList<UserViewDto> users = new LinkedList<>();
 
     @Override
-    public Screen show() {
+    public Screen show(ConfigurableApplicationContext context) {
 
         users.clear();
         System.out.println("Выберите поле, по которому будем искать пользователей:");
@@ -21,6 +20,7 @@ public class UserFindScreen implements Screen {
         System.out.println("2. name");
         System.out.println("3. email");
         System.out.println("4. age");
+        System.out.println("5. вывести всех пользователей на экран");
         System.out.println();
         System.out.println("0. exit");
 
@@ -37,52 +37,51 @@ public class UserFindScreen implements Screen {
         }
 
         switch (choice) {
-            case 1: userFindById();
+            case 1: userFindById(context);
                 break;
-            case 2: userFindByName();
+            case 2: userFindByName(context);
                 break;
-            case 3: userFindByEmail();
+            case 3: userFindByEmail(context);
                 break;
-            case 4: userFindByAge();
+            case 4: userFindByAge(context);
                 break;
-            case 0: return new MainScreen();
+            case 5: findAll(context);
+                break;
+            case 0: return context.getBean("mainScreen", Screen.class);
         }
 
         printUsers(users);
 
-        return new MainScreen();
+        return context.getBean("mainScreen", Screen.class);
     }
 
-    private static void printUsers(LinkedList<User> users) {
+    private static void printUsers(LinkedList<UserViewDto> users) {
         if (!users.isEmpty()) {
-            for (User user : users) {
-                System.out.println(user);
-            }
+            users.stream().forEach(System.out::println);
         } else System.out.println("Пользователей с таким полем не найдено");
         System.out.println("Press any key to continue...");
         new Scanner(System.in).nextLine();
     }
 
-    private static void userFindById() {
+    private static void userFindById(ConfigurableApplicationContext context) {
         System.out.println("Введите Id:");
         boolean successRead = false;
-        int id = 0;
+        Long id;
         while (!successRead) {
             try {
                 Scanner sc = new Scanner(System.in);
-                id = sc.nextInt();
+                id = sc.nextLong();
                 if (id > 0) successRead = true;
                 else System.out.println("incorrect id");
+                users.addLast(context.getBean(UserService.class).findUserById(id));
 
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             }
         }
-
-        users.addLast(UserService.findUserById(id));
     }
 
-    private static void userFindByName() {
+    private static void userFindByName(ConfigurableApplicationContext context) {
         System.out.println("Введите name:");
         boolean successRead = false;
         String name = null;
@@ -97,10 +96,10 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUserByName(name)) users.addLast(user);
+        for (UserViewDto dto : context.getBean(UserService.class).findUserByName(name)) users.addLast(dto);
     }
 
-    private static void userFindByEmail() {
+    private static void userFindByEmail(ConfigurableApplicationContext context) {
         System.out.println("Введите email:");
         boolean successRead = false;
         String email = null;
@@ -115,10 +114,10 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUserByEmail(email)) users.addLast(user);
+        for (UserViewDto dto : context.getBean(UserService.class).findUserByEmail(email)) users.addLast(dto);
     }
 
-    private static void userFindByAge() {
+    private static void userFindByAge(ConfigurableApplicationContext context) {
         System.out.println("Введите age:");
         boolean successRead = false;
         int age = 0;
@@ -133,7 +132,12 @@ public class UserFindScreen implements Screen {
             }
         }
 
-        for (User user : UserService.findUsersByAge(age)) users.addLast(user);
+        List<UserViewDto> usersByAge = context.getBean(UserService.class).findUserByAge(age);
+        if (usersByAge != null) for (UserViewDto dto : usersByAge) users.addLast(dto);
+    }
+
+    private static void findAll(ConfigurableApplicationContext context) {
+        for (UserViewDto dto : context.getBean(UserService.class).findAll()) users.addLast(dto);
     }
 
 }

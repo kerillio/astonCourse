@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="created new integration test saveAndUpdateUser in UserDaoImplTest">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="UserService покрыт юнит-тестами">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/RepositoryIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/astonCourse.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DAO/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserDaoImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +16,15 @@
   </component>
   <component name="DatabaseLocalColorSettings">
     <colors>
-      <entry key="dd64449f-525f-4327-ae3a-2e153344ecce" value="" />
+      <entry key="0029cb52-3d1d-4d3b-b3bf-4b21234b7cf1" value="" />
     </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Python Script" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -35,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Step2.SQL_userDB_rebuildind" />
+        <entry key="$PROJECT_DIR$" value="Step2.Module3.DAO_service_tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,66 +60,63 @@
     &quot;repository&quot;: &quot;astonCourse&quot;
   }
 }</component>
-  <component name="MavenRunner">
-    <option name="delegateBuildToMaven" value="true" />
-  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.00006103515625" />
-      <entry key="MS500" value="1.1435872943746292" />
-      <entry key="S2" value="1.615572206672458" />
-      <entry key="S5" value="1.8235910172675793" />
-      <entry key="S10" value="1.9075193038348803" />
-      <entry key="S30" value="1.9874546740827401" />
-      <entry key="S60" value="2.4297323066982113" />
-      <entry key="M2" value="4.2567201649958575" />
-      <entry key="M5" value="8.1240576044147" />
-      <entry key="M10" value="10.565748529437155" />
-      <entry key="M15" value="11.582800503524368" />
-      <entry key="M30" value="12.72253430071886" />
-      <entry key="H1" value="13.34305423818264" />
-      <entry key="H2" value="13.724186015864605" />
-      <entry key="H4" value="18.46467803105503" />
-      <entry key="D1" value="295.8205762812323" />
-      <entry key="W1" value="774.0877826964755" />
+      <entry key="MS100" value="1.0000000000001994" />
+      <entry key="MS500" value="1.0028841177406627" />
+      <entry key="S2" value="1.273727923645084" />
+      <entry key="S5" value="1.9768787897824454" />
+      <entry key="S10" value="2.6601139647443857" />
+      <entry key="S30" value="3.4645253736466595" />
+      <entry key="S60" value="3.9617928518109755" />
+      <entry key="M2" value="5.43580156564314" />
+      <entry key="M5" value="14.353170808692177" />
+      <entry key="M10" value="30.746857477252618" />
+      <entry key="M15" value="45.10693173619961" />
+      <entry key="M30" value="82.32628645121207" />
+      <entry key="H1" value="148.45487001257618" />
+      <entry key="H2" value="251.73914717562138" />
+      <entry key="H4" value="374.00179853347424" />
+      <entry key="D1" value="749.3595453631691" />
+      <entry key="W1" value="1416.72668556814" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.317942029970326E-127" />
-      <entry key="S2" value="2.701690950790714E-32" />
-      <entry key="S5" value="2.5211694850952156E-13" />
-      <entry key="S10" value="6.814972773870697E-7" />
-      <entry key="S30" value="0.027063209029950318" />
-      <entry key="S60" value="0.5477322747636422" />
-      <entry key="M2" value="2.6912435922869973" />
-      <entry key="M5" value="7.191589919293573" />
-      <entry key="M10" value="10.023503695547708" />
-      <entry key="M15" value="11.201823815635874" />
-      <entry key="M30" value="12.521563089340706" />
-      <entry key="H1" value="13.239794205260733" />
-      <entry key="H2" value="13.650789416422539" />
-      <entry key="H4" value="16.585997780132388" />
-      <entry key="D1" value="163.41905669802534" />
-      <entry key="W1" value="382.84050963682887" />
+      <entry key="MS100" value="8.560602747226905E-4" />
+      <entry key="MS500" value="0.2435010756824236" />
+      <entry key="S2" value="0.7120808346510685" />
+      <entry key="S5" value="1.0242802739262094" />
+      <entry key="S10" value="1.3267995218834447" />
+      <entry key="S30" value="1.732820807124802" />
+      <entry key="S60" value="2.155137245642704" />
+      <entry key="M2" value="3.9906165958534454" />
+      <entry key="M5" value="14.048991173492414" />
+      <entry key="M10" value="30.634757523812183" />
+      <entry key="M15" value="44.7690294858401" />
+      <entry key="M30" value="80.97732004326335" />
+      <entry key="H1" value="145.53193287109286" />
+      <entry key="H2" value="246.14032278181097" />
+      <entry key="H4" value="365.0201291848283" />
+      <entry key="D1" value="652.3598291235011" />
+      <entry key="W1" value="994.7785803243798" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.822320575002842E-5" />
-      <entry key="MS500" value="0.21769011334077504" />
-      <entry key="S2" value="1.1355907257240598" />
-      <entry key="S5" value="1.593293314964211" />
-      <entry key="S10" value="1.7848200288141676" />
-      <entry key="S30" value="1.9697110446289399" />
-      <entry key="S60" value="2.9342523034172006" />
-      <entry key="M2" value="6.885599739556924" />
-      <entry key="M5" value="15.257774793376116" />
-      <entry key="M10" value="20.550174684533427" />
-      <entry key="M15" value="22.755781851296287" />
-      <entry key="M30" value="25.228119812122774" />
-      <entry key="H1" value="26.574437473473687" />
-      <entry key="H2" value="27.370645719106893" />
-      <entry key="H4" value="35.04792984010336" />
-      <entry key="D1" value="459.2340148672801" />
-      <entry key="W1" value="1156.9263117069163" />
+      <entry key="MS100" value="0.21464135912431678" />
+      <entry key="MS500" value="0.7437559818038906" />
+      <entry key="S2" value="1.4632082319132018" />
+      <entry key="S5" value="2.6425333444684314" />
+      <entry key="S10" value="3.7520480758564307" />
+      <entry key="S30" value="5.097790525630633" />
+      <entry key="S60" value="6.055960932322039" />
+      <entry key="M2" value="9.371770997589918" />
+      <entry key="M5" value="28.327129178482853" />
+      <entry key="M10" value="61.2947313384188" />
+      <entry key="M15" value="89.7863716134459" />
+      <entry key="M30" value="163.21609100830014" />
+      <entry key="H1" value="293.90598189009694" />
+      <entry key="H2" value="497.81072159788044" />
+      <entry key="H4" value="738.9710256473106" />
+      <entry key="D1" value="1401.7033534219527" />
+      <entry key="W1" value="2411.501291174716" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -139,63 +133,88 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveAndFindUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.saveAndUpdateUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [process-test-classes].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [validate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Step2.Module3.DAO__service__tests&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;F:/IdeaProjects/astonCourse/src/main/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndDeleteUser.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByAge.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByName.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidIdException.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidNameException.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndFindUser.executor": "Debug",
+    "JUnit.RepositryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndUpdateName.executor": "Run",
+    "JUnit.RepositryIntegrationTest.executor": "Run",
+    "JUnit.UserDaoImplTest.executor": "Run",
+    "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
+    "JUnit.UserServiceTest.create_ShouldCreateAndReturnDto.executor": "Run",
+    "JUnit.UserServiceTest.emptyNameReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.find_IncorrectEmailException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidEageException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidEmailException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidNameException.executor": "Run",
+    "JUnit.UserServiceTest.find_findAll.executor": "Run",
+    "JUnit.UserServiceTest.find_findByAge.executor": "Run",
+    "JUnit.UserServiceTest.find_findByEmail.executor": "Run",
+    "JUnit.UserServiceTest.find_findById.executor": "Run",
+    "JUnit.UserServiceTest.find_findByName.executor": "Run",
+    "JUnit.UserServiceTest.incorrectAge_ReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.remove_InvalidIdException.executor": "Run",
+    "JUnit.UserServiceTest.remove_NullPointerException.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyEmailException.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyNameException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidAgeException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidEmailException.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateEmailReturnNewDto.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateNameReturnNewDto.executor": "Run",
+    "Maven.Main.executor": "Run",
+    "Maven.UserDaoImplTest.executor": "Run",
+    "Maven.UserDaoImplTest.saveAndUpdateUser.executor": "Run",
+    "Maven.UserServiceTest.executor": "Run",
+    "Maven.astonCourse [clean].executor": "Run",
+    "Maven.astonCourse [compile].executor": "Run",
+    "Maven.astonCourse [deploy].executor": "Run",
+    "Maven.astonCourse [process-test-classes].executor": "Run",
+    "Maven.astonCourse [test].executor": "Run",
+    "Maven.astonCourse [validate].executor": "Run",
+    "Maven.astonCourse [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "Step2.Build__by__SpringBoot",
+    "git.auto.fetch.suggestion.counter": "2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoImplTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.Main" />
-      <module name="astonCourse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Step2.Module2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RepositoryIntegrationTest">
+    <configuration name="RepositoryIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -204,13 +223,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserDaoImplTest" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoImplTest.saveAndFindUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -219,14 +238,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserDaoImplTest" />
-      <option name="METHOD_NAME" value="saveAndFindUser" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndDeleteUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoImplTest.saveAndUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndFindManyByAge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -235,14 +254,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserDaoImplTest" />
-      <option name="METHOD_NAME" value="saveAndUpdateUser" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndFindManyByAge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndFindManyByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -251,19 +270,78 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndFindManyByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepositoryIntegrationTest.invalidNameException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="invalidNameException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="-Dexec.workingdir=F:\IdeaProjects\astonCourse" />
+                <option value="-Dexec.args=-classpath %classpath Step2.Module2.Main" />
+                <option value="-Dexec.executable=C:\Users\keril\.jdks\openjdk-26.0.2.1\bin\java.exe" />
+                <option value="exec:exec" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map>
+                <entry key="X" value="false" />
+              </map>
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Step2.Module2.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UserDaoImplTest.saveAndUpdateUser" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserDaoImplTest" />
-        <item itemvalue="JUnit.UserDaoImplTest.saveAndFindUser" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByAge" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByName" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndDeleteUser" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.invalidNameException" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +385,13 @@
     <MESSAGE value="created integration test" />
     <MESSAGE value="created unit test" />
     <MESSAGE value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="created new integration test saveAndUpdateUser in UserDaoImplTest" />
+    <MESSAGE value="теперь интеграционные тесты работают через docker" />
+    <MESSAGE value="небольшой багфикс&#10;добавлено findall&#10;браны лишние transaction.begin" />
+    <MESSAGE value="переделал проект на SpringBoot" />
+    <MESSAGE value="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser" />
+    <MESSAGE value="еще несколько исправлений неверных типов для id" />
+    <MESSAGE value="UserService покрыт юнит-тестами" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserService покрыт юнит-тестами" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

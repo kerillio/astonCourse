@@ -1,84 +1,105 @@
 package Step2.Module2.Service;
 
-import Step2.Module2.DAO.UserDao;
-import Step2.Module2.DAO.UserDaoImpl;
+import Step2.Module2.DTO.UserCreateDto;
+import Step2.Module2.DTO.UserUpdateDto;
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Models.User;
+import Step2.Module2.Repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
+import java.util.Optional;
 
+@Service
+@Transactional(readOnly = true)
 public class UserService {
-    
+
+    private final UserRepository userRepository;
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
-    private static UserDao userDao = new UserDaoImpl();
 
-    public UserService() {
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public UserService (UserDao userDao) {
-        this.userDao = userDao;
-    }
 
-    public User getUser() {
-        return new User();
-    }
-
-    public static void addUser(User user) {
-        if (user.getName().isEmpty()) {
+    @Transactional
+    public Optional<UserViewDto> addUser(UserCreateDto dto) {
+        if (dto.name().isEmpty()) {
             log.warn("user.name is empty");
-        } else if (user.getAge() < 0) {
+        } else if (dto.age() < 1) {
             log.warn("Age is incorrect");
-        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
+        } else if (dto.email().isEmpty() || !dto.email().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userDao.save(user);
+            User savedUser = dto.toEntity();
+            userRepository.save(savedUser);
+            return Optional.of(UserViewDto.fromEntity(savedUser));
         }
+        return Optional.empty();
 
     }
 
-    public static void updateUser (User user) {
-        if (user.getName().isEmpty()) {
+    @Transactional
+    public Optional<UserViewDto> updateUser (UserUpdateDto dto) {
+        if (dto.name().isEmpty()) {
             log.warn("Name is empty");
-        } else if (user.getAge() < 0) {
+        } else if (dto.age() < 0) {
             log.warn("Age is incorrect");
-        } else if (user.getEmail().isEmpty() || !user.getEmail().contains("@")) {
+        } else if (dto.email().isEmpty() || !dto.email().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userDao.update(user);
+            Optional<User> existingUser = userRepository.findById(dto.id().longValue());
+            if (existingUser.isPresent()) {
+                dto.applyTo(existingUser.get());
+                return Optional.of(UserViewDto.fromEntity(userRepository.save(existingUser.get())));
+            }
+        }
+        return Optional.empty();
+    }
+
+    @Transactional
+    public void removeUserById(Long id) {
+        if (id != null){
+            if (id > 0) {
+                userRepository.deleteById(id);
+            }
         }
     }
 
-    public static void removeUserById(int id) {
-        if (id > 0) {
-            userDao.delete(id);
-        }
+    public List<UserViewDto> findAll() {
+        return userRepository.findAll().stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public static User findUserById(int id) {
+    public UserViewDto findUserById(Long id) {
         if (id > 0) {
-            return userDao.findById(id);
+            Optional<User> foundUser = userRepository.findById(id);
+            return foundUser.map(UserViewDto::fromEntity).orElse(null);
         } else return null;
     }
 
-    public static List<User> findUserByName(String name) {
+    public List<UserViewDto> findUserByName(String name) {
         if (name.isEmpty()) {
             log.warn("name is empty");
             return null;
-        } else return userDao.findByName(name);
+        } else return userRepository.findByName(name).stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public static List<User> findUserByEmail(String email) {
-        if (email.isEmpty()) {
-            log.warn("email is empty");
+    public List<UserViewDto> findUserByEmail(String email) {
+        if (email.isEmpty() || !email.contains("@")) {
+            log.warn("email is incorrect");
             return null;
-        } else return userDao.findByEmail(email);
+        } else return userRepository.findByEmail(email).stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public static List<User> findUsersByAge(int age) {
+    public List<UserViewDto> findUserByAge(int age) {
         if (age < 1) {
             log.warn("Age is incorrect");
             return null;
-        } else return userDao.findUserByAge(age);
+        } else return userRepository.findByAge(age).stream().map(UserViewDto::fromEntity).toList();
     }
 
 }

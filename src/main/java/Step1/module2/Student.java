@@ -117,7 +117,7 @@ public class Student {
     public void addBook(Book book) {
         try {
             if (this.bookList != null) this.bookList.add(book);
-            else this.bookList.addFirst(book);
+            else this.bookList.add(book);
         } catch (NullPointerException e) {
 
         }

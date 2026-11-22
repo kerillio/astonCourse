@@ -1,13 +1,16 @@
 package Step2.Module2.UI;
 
+import org.springframework.context.ConfigurableApplicationContext;
+
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+
 public class MainScreen implements Screen {
 
     @Override
-    public Screen show (){
+    public Screen show (ConfigurableApplicationContext context){
         System.out.println("Выберите действие (введите цифру): ");
         System.out.println("1. Создать нового user, записать его в базу");
         System.out.println("2. Найти одного или несколько user (с выбором поля поиска)");
@@ -22,12 +25,12 @@ public class MainScreen implements Screen {
         while (!succesRead) {
             try {
                 switch (sc.nextInt()) {
-                    case 1: return new CreateUserScreen();
-                    case 2: return new UserFindScreen();
-                    case 3: return new UserInfoUpdateScreen();
-                    case 4: return new RemoveUserScreen();
+                    case 1: return context.getBean("createUserScreen", Screen.class);
+                    case 2: return  context.getBean("userFindScreen", Screen.class);
+                    case 3: return  context.getBean("userInfoUpdateScreen", Screen.class);
+                    case 4: return  context.getBean("removeUserScreen", Screen.class);
 
-                    case 0: return new ExitScreen();
+                    case 0: return  context.getBean("exitScreen", Screen.class);
                     default:
                         System.out.println("Некорректный ввод");;
                 }
@@ -35,9 +38,9 @@ public class MainScreen implements Screen {
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             } catch (NoSuchElementException e) {
-                e.printStackTrace();
+                System.out.println("No such element exception");;
             }
         }
-        return new MainScreen();
+        return  context.getBean("mainScreen", Screen.class);
     }
 }

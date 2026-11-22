@@ -2,23 +2,25 @@ package Step2.Module2.Models;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-
 @Entity
+@Scope("Prototype")
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  id;
+    private Long id;
 
     private String name;
 
     private String email;
 
-    private int age;
+    private Integer age;
 
     private String created_at;
 
@@ -30,11 +32,10 @@ public class User {
 
     public User() {}
 
-    public User(String name, String email, int age) {
+    public User(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
         this.age = age;
-        this.created_at = created_at;
     }
 
     public User (User user) {
@@ -52,12 +53,12 @@ public class User {
                 "\n\tname: " + this.name +
                 "\n\temail: " + this.email +
                 "\n\tage: " + this.age +
-                "\n\tcreated_at: " + this.created_at + "\n}\n";
+                "\n\tcreated_at: " + this.created_at + "\n}";
     }
 
-    public void setId(int id) {this.id = id;}
+    public void setId(Long id) {this.id = id;}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

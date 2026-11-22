@@ -1,11 +1,14 @@
 package Step2.Module2.UI;
 
-import Step2.Module2.DAO.HibernateSessionFactoryUtil;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 public class ExitScreen implements Screen {
 
     @Override
-    public Screen show() {
+    public Screen show(ConfigurableApplicationContext context) {
         return null;
     }
 }

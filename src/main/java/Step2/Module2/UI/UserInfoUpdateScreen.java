@@ -1,66 +1,97 @@
 package Step2.Module2.UI;
 
+import Step2.Module2.DTO.UserUpdateDto;
+import Step2.Module2.DTO.UserViewDto;
 import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.Scanner;
+
 
 public class UserInfoUpdateScreen implements Screen {
 
     @Override
-    public Screen show() {
+    public Screen show(ConfigurableApplicationContext context) {
 
         System.out.println("Введите id пользователя, информацию о котором надо изменить:");
         boolean successRead = false;
-        int id = 0;
+        Optional<UserViewDto> foundUser = Optional.empty();
+        Long id;
         while (!successRead) {
             try {
                 Scanner sc = new Scanner(System.in);
-                id = sc.nextInt();
+                id = sc.nextLong();
                 if (id > 0) successRead = true;
                 else System.out.println("incorrect id");
-
+                foundUser = Optional.ofNullable(context.getBean(UserService.class).findUserById(id));
             } catch (InputMismatchException e) {
                 System.out.println("Введите число");
             }
         }
 
-        User user = UserService.findUserById(id);
-
-        System.out.println("Найден:");
-        System.out.println(user);
-        System.out.println("\nВыберите поле, которое будет меняться:");
-        System.out.println("1. Имя");
-        System.out.println("2. Почта");
 
 
-        int choice = 0;
-        successRead = false;
-        while (!successRead) {
-            Scanner sc = new Scanner(System.in);
-            try {
-                choice = sc.nextInt();
-                if  (choice == 1 || choice == 2) {
-                    successRead = true;
+        if (foundUser.isEmpty()) System.out.println("User not found");
+        else {
+            System.out.println("Найден:");
+            System.out.println(foundUser);
+            System.out.println("\nВыберите поле, которое будет меняться:");
+            System.out.println("1. Имя");
+            System.out.println("2. Почта");
+
+            int choice = 0;
+            successRead = false;
+            while (!successRead) {
+                Scanner sc = new Scanner(System.in);
+                try {
+                    choice = sc.nextInt();
+                    if  (choice == 1 || choice == 2) {
+                        successRead = true;
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Введите число");
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Введите число");
+            }
+
+            if  (choice == 1) {
+                String newName = nameUpdate();
+                context.getBean(UserService.class).updateUser(
+                        new UserUpdateDto(
+                                foundUser.get().id(),
+                                newName,
+                                foundUser.get().email(),
+                                foundUser.get().age(),
+                                foundUser.get().created_at()
+                        )
+                );
+            } else if (choice == 2) {
+                String newEmail = emailUpdate();
+                context.getBean(UserService.class).updateUser(
+                        new UserUpdateDto(
+                                foundUser.get().id(),
+                                foundUser.get().name(),
+                                newEmail,
+                                foundUser.get().age(),
+                                foundUser.get().created_at()
+                        )
+                );
+
             }
         }
 
-        if  (choice == 1) {
-            nameUpdate(user);
-        } else if (choice == 2) {
-            emailUpdate(user);
-        }
-        UserService.updateUser(user);
+        System.out.println();
 
-        return new MainScreen();
+        return context.getBean("mainScreen", Screen.class);
     }
 
-    private void emailUpdate(User user) {
+    private String emailUpdate() {
         System.out.println("Введите email:");
         boolean successRead = false;
         String email = null;
@@ -74,11 +105,12 @@ public class UserInfoUpdateScreen implements Screen {
                 System.out.println("пустая строка");
             }
         }
-        user.setEmail(email);
+
+        return email;
 
     }
 
-    private void nameUpdate(User user) {
+    private String nameUpdate() {
         System.out.println("Введите name:");
         boolean successRead = false;
         String name = null;
@@ -92,7 +124,7 @@ public class UserInfoUpdateScreen implements Screen {
                 System.out.println("пустая строка");
             }
         }
-        user.setName(name);
+        return name;
     }
 
 }
