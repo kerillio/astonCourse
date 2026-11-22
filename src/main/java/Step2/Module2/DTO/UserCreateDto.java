@@ -5,7 +5,7 @@ import Step2.Module2.Models.User;
 public record UserCreateDto(
         String name,
         String email,
-        int age
+        Integer age
 ) {
     public User toEntity() {
         User user = new User();

@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="переделал проект на SpringBoot">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserViewDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="успешный запуск и ручная работа. пока без тестов">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astonCourse.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step1/module2/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step1/module2/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserUpdateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserViewDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/UserViewDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Readers/UserReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserInfoUpdateScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/MainScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +26,6 @@
   <component name="DatabaseLocalColorSettings">
     <colors>
       <entry key="0029cb52-3d1d-4d3b-b3bf-4b21234b7cf1" value="" />
-      <entry key="dd64449f-525f-4327-ae3a-2e153344ecce" value="" />
     </colors>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -36,8 +33,8 @@
       <list>
         <option value="Interface" />
         <option value="Python Script" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,61 +71,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000113494192" />
-      <entry key="S30" value="1.0041352832103136" />
-      <entry key="S60" value="1.1209927837034452" />
-      <entry key="M2" value="1.7289358855642554" />
-      <entry key="M5" value="3.972794269790878" />
-      <entry key="M10" value="10.679893769202653" />
-      <entry key="M15" value="19.68471241958499" />
-      <entry key="M30" value="44.593229141462345" />
-      <entry key="H1" value="79.04638169005422" />
-      <entry key="H2" value="119.12830582603081" />
-      <entry key="H4" value="156.86710917070693" />
-      <entry key="D1" value="398.18842331678263" />
-      <entry key="W1" value="1013.1118466924812" />
+      <entry key="MS100" value="1.6813737730050832E-5" />
+      <entry key="MS500" value="0.11095141715868721" />
+      <entry key="S2" value="0.5771427087584446" />
+      <entry key="S5" value="0.8026313518315958" />
+      <entry key="S10" value="0.8998473734262016" />
+      <entry key="S30" value="1.4245238390339103" />
+      <entry key="S60" value="2.6576337039137474" />
+      <entry key="M2" value="4.42549359257565" />
+      <entry key="M5" value="7.65814130887717" />
+      <entry key="M10" value="14.520830198843708" />
+      <entry key="M15" value="23.11364225215685" />
+      <entry key="M30" value="49.658435324417624" />
+      <entry key="H1" value="95.83851041833695" />
+      <entry key="H2" value="161.8684868865561" />
+      <entry key="H4" value="233.14434592682053" />
+      <entry key="D1" value="520.7676042700379" />
+      <entry key="W1" value="1155.7636216907958" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="7.909173077741087E-309" />
-      <entry key="S2" value="1.11861617243372E-77" />
-      <entry key="S5" value="2.33875536675169E-31" />
-      <entry key="S10" value="6.746519187673035E-16" />
-      <entry key="S30" value="1.3879117302508161E-5" />
-      <entry key="S60" value="0.005266613659092536" />
-      <entry key="M2" value="0.1037190424923407" />
-      <entry key="M5" value="1.0990865899355187" />
-      <entry key="M10" value="5.936479090248751" />
-      <entry key="M15" value="12.582643417651186" />
-      <entry key="M30" value="30.56292339762379" />
-      <entry key="H1" value="58.12888732260973" />
-      <entry key="H2" value="96.36853017944227" />
-      <entry key="H4" value="135.1547177576874" />
-      <entry key="D1" value="283.1124888513285" />
-      <entry key="W1" value="578.8070048157982" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000000000027957" />
+      <entry key="S5" value="1.0000603957148761" />
+      <entry key="S10" value="1.0087901256238496" />
+      <entry key="S30" value="1.4673176323220367" />
+      <entry key="S60" value="2.749746675019761" />
+      <entry key="M2" value="5.189000874212868" />
+      <entry key="M5" value="12.483859183349375" />
+      <entry key="M10" value="28.008055462887977" />
+      <entry key="M15" value="43.24067276642668" />
+      <entry key="M30" value="79.58847264927536" />
+      <entry key="H1" value="128.94994219543827" />
+      <entry key="H2" value="192.5467838518742" />
+      <entry key="H4" value="261.15183846299294" />
+      <entry key="D1" value="456.951292050747" />
+      <entry key="W1" value="769.582129995539" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.2465518814083848E-4" />
-      <entry key="MS500" value="0.18633879834986503" />
-      <entry key="S2" value="0.6570158135746855" />
-      <entry key="S5" value="0.8453378774563512" />
-      <entry key="S10" value="0.9194225891936105" />
-      <entry key="S30" value="0.9764928903652446" />
-      <entry key="S60" value="1.111796163863653" />
-      <entry key="M2" value="1.823699248740069" />
-      <entry key="M5" value="5.062784307231741" />
-      <entry key="M10" value="16.59519065119158" />
-      <entry key="M15" value="32.23581043611982" />
-      <entry key="M30" value="75.11518657441177" />
-      <entry key="H1" value="137.13718255006503" />
-      <entry key="H2" value="215.4673365899359" />
-      <entry key="H4" value="292.00214227712985" />
-      <entry key="D1" value="681.2932255222862" />
-      <entry key="W1" value="1591.9162277737962" />
+      <entry key="MS100" value="2.984961615474942E-4" />
+      <entry key="MS500" value="0.19833235814332184" />
+      <entry key="S2" value="0.8483539641557576" />
+      <entry key="S5" value="1.3559998717689326" />
+      <entry key="S10" value="1.645089645246444" />
+      <entry key="S30" value="2.765742285799315" />
+      <entry key="S60" value="5.300869543740622" />
+      <entry key="M2" value="9.524409353403495" />
+      <entry key="M5" value="20.06838575239991" />
+      <entry key="M10" value="42.45071496130186" />
+      <entry key="M15" value="66.27308441669196" />
+      <entry key="M30" value="129.1684506174238" />
+      <entry key="H1" value="224.72127855359767" />
+      <entry key="H2" value="354.36342218618347" />
+      <entry key="H4" value="494.2607311362555" />
+      <entry key="D1" value="977.7074966839747" />
+      <entry key="W1" value="1925.3425377517233" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -150,6 +147,13 @@
     "Application.Main.executor": "Run",
     "JUnit.UserDaoImplTest.executor": "Run",
     "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
+    "JUnit.UserServiceTest.create_ShouldCreateAndReturnDto.executor": "Run",
+    "JUnit.UserServiceTest.emptyNameReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.incorrectAge_ReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyNameException.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateEmailReturnNewDto.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateNameReturnNewDto.executor": "Run",
     "Maven.Main.executor": "Run",
     "Maven.UserDaoImplTest.executor": "Run",
     "Maven.UserDaoImplTest.saveAndUpdateUser.executor": "Run",
@@ -193,9 +197,8 @@
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.Main" />
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -203,6 +206,73 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.update_EmptyEmailException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="METHOD_NAME" value="update_EmptyEmailException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.update_EmptyNameException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="METHOD_NAME" value="update_EmptyNameException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.update_InvalidAgeException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="METHOD_NAME" value="update_InvalidAgeException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.update_InvalidEmailException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="METHOD_NAME" value="update_InvalidEmailException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -251,15 +321,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.update_InvalidAgeException" />
+        <item itemvalue="JUnit.UserServiceTest.update_InvalidEmailException" />
+        <item itemvalue="JUnit.UserServiceTest.update_EmptyEmailException" />
+        <item itemvalue="JUnit.UserServiceTest.update_EmptyNameException" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
       </set>
     </attachedChunks>
   </component>

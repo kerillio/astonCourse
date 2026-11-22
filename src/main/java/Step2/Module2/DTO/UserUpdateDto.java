@@ -3,10 +3,10 @@ package Step2.Module2.DTO;
 import Step2.Module2.Models.User;
 
 public record UserUpdateDto(
-        Integer id,
+        Long id,
         String name,
         String email,
-        int age,
+        Integer age,
         String created_at
 ) {
     public void applyTo(User existingUser) {

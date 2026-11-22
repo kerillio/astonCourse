@@ -10,12 +10,19 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 public class CreateUserScreen implements Screen {
 
     @Override
     public Screen show(ConfigurableApplicationContext context) {
         UserCreateDto dto = UserReader.readByConsole();
-        context.getBean("userService", UserService.class).addUser(dto);
+        Optional<UserViewDto> savedUser = context.getBean("userService", UserService.class).addUser(dto);
+        if (savedUser.isPresent()) {
+            System.out.printf("Пользователь " + savedUser.get().name() + " сохранён");
+        } else {
+            System.out.printf("Не удалось сохранить пользователя");
+        }
         return context.getBean("mainScreen", Screen.class);
     }
 

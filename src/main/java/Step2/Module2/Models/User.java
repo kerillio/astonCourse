@@ -14,13 +14,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String name;
 
     private String email;
 
-    private int age;
+    private Integer age;
 
     private String created_at;
 
@@ -32,7 +32,7 @@ public class User {
 
     public User() {}
 
-    public User(String name, String email, int age) {
+    public User(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
         this.age = age;
@@ -56,9 +56,9 @@ public class User {
                 "\n\tcreated_at: " + this.created_at + "\n}";
     }
 
-    public void setId(int id) {this.id = id;}
+    public void setId(Long id) {this.id = id;}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

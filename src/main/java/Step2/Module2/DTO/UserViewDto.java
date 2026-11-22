@@ -3,7 +3,7 @@ package Step2.Module2.DTO;
 import Step2.Module2.Models.User;
 
 public record UserViewDto(
-        int id,
+        Long id,
         String name,
         String email,
         Integer age,

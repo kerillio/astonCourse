@@ -31,21 +31,24 @@ public class UserService {
 //    }
 
     @Transactional
-    public void addUser(UserCreateDto dto) {
+    public Optional<UserViewDto> addUser(UserCreateDto dto) {
         if (dto.name().isEmpty()) {
             log.warn("user.name is empty");
-        } else if (dto.age() < 0) {
+        } else if (dto.age() < 1) {
             log.warn("Age is incorrect");
         } else if (dto.email().isEmpty() || !dto.email().contains("@")) {
             log.warn("Email is incorrect");
         } else {
-            userRepository.save(dto.toEntity());
+            User savedUser = dto.toEntity();
+            userRepository.save(savedUser);
+            return Optional.of(UserViewDto.fromEntity(savedUser));
         }
+        return Optional.empty();
 
     }
 
     @Transactional
-    public void updateUser (UserUpdateDto dto) {
+    public Optional<UserViewDto> updateUser (UserUpdateDto dto) {
         if (dto.name().isEmpty()) {
             log.warn("Name is empty");
         } else if (dto.age() < 0) {
@@ -56,10 +59,10 @@ public class UserService {
             Optional<User> existingUser = userRepository.findById(dto.id().longValue());
             if (existingUser.isPresent()) {
                 dto.applyTo(existingUser.get());
-                userRepository.save(existingUser.get());
+                return Optional.of(UserViewDto.fromEntity(userRepository.save(existingUser.get())));
             }
-
         }
+        return Optional.empty();
     }
 
     @Transactional
