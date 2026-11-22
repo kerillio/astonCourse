@@ -1,12 +1,8 @@
 package Step2.Module2.UI;
 
 import Step2.Module2.DTO.UserViewDto;
-import Step2.Module2.Models.User;
 import Step2.Module2.Service.UserService;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 
 import java.util.*;
 
@@ -136,7 +132,7 @@ public class  UserFindScreen implements Screen {
             }
         }
 
-        List<UserViewDto> usersByAge = context.getBean(UserService.class).findUsersByAge(age);
+        List<UserViewDto> usersByAge = context.getBean(UserService.class).findUserByAge(age);
         if (usersByAge != null) for (UserViewDto dto : usersByAge) users.addLast(dto);
     }
 

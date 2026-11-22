@@ -26,10 +26,6 @@ public class UserService {
     }
 
 
-//    public User getUser() {
-//        return new User();
-//    }
-
     @Transactional
     public Optional<UserViewDto> addUser(UserCreateDto dto) {
         if (dto.name().isEmpty()) {
@@ -67,8 +63,10 @@ public class UserService {
 
     @Transactional
     public void removeUserById(Long id) {
-        if (id > 0) {
-            userRepository.deleteById(id);
+        if (id != null){
+            if (id > 0) {
+                userRepository.deleteById(id);
+            }
         }
     }
 
@@ -91,13 +89,13 @@ public class UserService {
     }
 
     public List<UserViewDto> findUserByEmail(String email) {
-        if (email.isEmpty()) {
-            log.warn("email is empty");
+        if (email.isEmpty() || !email.contains("@")) {
+            log.warn("email is incorrect");
             return null;
         } else return userRepository.findByEmail(email).stream().map(UserViewDto::fromEntity).toList();
     }
 
-    public List<UserViewDto> findUsersByAge(int age) {
+    public List<UserViewDto> findUserByAge(int age) {
         if (age < 1) {
             log.warn("Age is incorrect");
             return null;

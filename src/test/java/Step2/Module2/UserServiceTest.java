@@ -7,7 +7,6 @@ import Step2.Module2.Models.User;
 import Step2.Module2.Repository.UserRepository;
 import Step2.Module2.Service.UserService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -16,7 +15,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
@@ -27,11 +26,6 @@ public class UserServiceTest {
 
     @InjectMocks
     private UserService userService;
-
-    @BeforeEach
-    void setUp () {
-
-    }
 
     @Test
     void add_ShouldCreateAndReturnDto() {
@@ -54,7 +48,6 @@ public class UserServiceTest {
     void add_emptyName_ReturnEmptyOptional() {
         //Подготовка данных
         UserCreateDto newUserDto = new UserCreateDto("", "ivan@example.com", 26);
-        User newUser = newUserDto.toEntity();
 
         //Пытаемся сохранить пользователя
         Optional<UserViewDto> savedDto = userService.addUser(newUserDto);
@@ -69,7 +62,6 @@ public class UserServiceTest {
     void add_emptyEmail_ReturnEmptyOptional() {
         //Подготовка данных
         UserCreateDto newUserDto = new UserCreateDto("Ivan", "", 26);
-        User newUser = newUserDto.toEntity();
 
         //Пытаемся сохранить пользователя
         Optional<UserViewDto> savedDto = userService.addUser(newUserDto);
@@ -83,7 +75,6 @@ public class UserServiceTest {
     void add_incorrectEmail_ReturnEmptyOptional() {
         //Подготовка данных
         UserCreateDto newUserDto = new UserCreateDto("Ivan", "ivanexample.com", 26);
-        User newUser = newUserDto.toEntity();
 
         //Пытаемся сохранить пользователя
         Optional<UserViewDto> savedDto = userService.addUser(newUserDto);
@@ -97,7 +88,6 @@ public class UserServiceTest {
     void add_incorrectAge_ReturnEmptyOptional() {
         //Подготовка данных
         UserCreateDto newUserDto = new UserCreateDto("Ivan", "ivanexample.com", -1);
-        User newUser = newUserDto.toEntity();
 
         //Пытаемся сохранить пользователя
         Optional<UserViewDto> savedDto = userService.addUser(newUserDto);
@@ -182,7 +172,6 @@ public class UserServiceTest {
         existingUser.setName("Ivan");
         existingUser.setAge(26);
         existingUser.setEmail("Ivan@example.com");
-        UserViewDto oldUserDto = UserViewDto.fromEntity(existingUser);
 
         //Обновляем пользователя
         Optional<UserViewDto> savedDto = userService.updateUser(new UserUpdateDto(
@@ -207,7 +196,6 @@ public class UserServiceTest {
         existingUser.setName("Ivan");
         existingUser.setAge(26);
         existingUser.setEmail("Ivan@example.com");
-        UserViewDto oldUserDto = UserViewDto.fromEntity(existingUser);
 
         //Обновляем пользователя
         Optional<UserViewDto> savedDto = userService.updateUser(new UserUpdateDto(
@@ -232,7 +220,6 @@ public class UserServiceTest {
         existingUser.setName("Ivan");
         existingUser.setAge(26);
         existingUser.setEmail("Ivan@example.com");
-        UserViewDto oldUserDto = UserViewDto.fromEntity(existingUser);
 
         //Обновляем пользователя
         Optional<UserViewDto> savedDto = userService.updateUser(new UserUpdateDto(
@@ -257,7 +244,6 @@ public class UserServiceTest {
         existingUser.setName("Ivan");
         existingUser.setAge(26);
         existingUser.setEmail("Ivan@example.com");
-        UserViewDto oldUserDto = UserViewDto.fromEntity(existingUser);
 
         //Обновляем пользователя
         Optional<UserViewDto> savedDto = userService.updateUser(new UserUpdateDto(
@@ -271,6 +257,183 @@ public class UserServiceTest {
         //проверка значений
         Assertions.assertEquals(Optional.empty(), savedDto);
         Mockito.verifyNoInteractions(userRepository);
-
     }
+
+    @Test
+    void find_findAll () {
+        //setup
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setName("Ivan");
+        user1.setEmail("Ivan@example.com");
+        user1.setAge(26);
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setName("Alex");
+        user2.setEmail("Alex@example.com");
+        user2.setAge(19);
+
+        List<UserViewDto> expectedList = List.of(UserViewDto.fromEntity(user1), UserViewDto.fromEntity(user2));
+
+        //Mock
+        Mockito.when(userRepository.findAll()).thenReturn(List.of(user1, user2));
+
+        //Assert
+        List<UserViewDto> finalResult = userService.findAll();
+        Assertions.assertEquals(expectedList, finalResult);
+    }
+
+    @Test
+    void find_findByName() {
+        //setup
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setName("Ivan");
+        user1.setEmail("Ivan@example.com");
+        user1.setAge(26);
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setName("Ivan");
+        user2.setEmail("Alex@example.com");
+        user2.setAge(19);
+
+        List<UserViewDto> expectedList = List.of(UserViewDto.fromEntity(user1), UserViewDto.fromEntity(user2));
+
+        //Mock
+        Mockito.when(userRepository.findByName("Ivan")).thenReturn(List.of(user1, user2));
+
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByName("Ivan");
+        Assertions.assertEquals(expectedList, finalResult);
+    }
+
+    @Test
+    void find_InvalidNameException() {
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByName("");
+        Assertions.assertNull(finalResult);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void find_findById() {
+        //setup
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setName("Ivan");
+        user1.setEmail("Ivan@example.com");
+        user1.setAge(26);
+
+        UserViewDto expectedUser = UserViewDto.fromEntity(user1);
+
+
+        //Mock
+        Mockito.when(userRepository.findById(1L)).thenReturn(Optional.of(user1));
+
+        //Assert
+        UserViewDto finalResult = userService.findUserById(1L);
+        Assertions.assertEquals(expectedUser, finalResult);
+    }
+
+    @Test
+    void find_InvalidIdException() {
+        //Assert
+        UserViewDto finalResult = userService.findUserById(-1L);
+        Assertions.assertNull(finalResult);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+
+    @Test
+    void find_findByEmail() {
+        //setup
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setName("Ivan");
+        user1.setEmail("Alex@example.com");
+        user1.setAge(26);
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setName("Ivan");
+        user2.setEmail("Alex@example.com");
+        user2.setAge(19);
+
+        List<UserViewDto> expectedList = List.of(UserViewDto.fromEntity(user1), UserViewDto.fromEntity(user2));
+
+
+        //Mock
+        Mockito.when(userRepository.findByEmail("Alex@example.com")).thenReturn(List.of(user1, user2));
+
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByEmail("Alex@example.com");
+        Assertions.assertEquals(expectedList, finalResult);
+    }
+
+    @Test
+    void find_InvalidEmailException() {
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByEmail("");
+        Assertions.assertNull(finalResult);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void find_IncorrectEmailException() {
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByEmail("ivanexample.com");
+        Assertions.assertNull(finalResult);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void find_findByAge() {
+        //setup
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setName("Ivan");
+        user1.setEmail("Ivan@example.com");
+        user1.setAge(26);
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setName("Alex");
+        user2.setEmail("Alex@example.com");
+        user2.setAge(26);
+
+        List<UserViewDto> expectedList = List.of(UserViewDto.fromEntity(user1), UserViewDto.fromEntity(user2));
+
+
+        //Mock
+        Mockito.when(userRepository.findByAge(26)).thenReturn(List.of(user1, user2));
+
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByAge(26);
+        Assertions.assertEquals(expectedList, finalResult);
+    }
+
+    @Test
+    void find_InvalidEageException() {
+        //Assert
+        List<UserViewDto> finalResult = userService.findUserByAge(0);
+        Assertions.assertNull(finalResult);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void remove_InvalidIdException() {
+        //Assert
+        userService.removeUserById(0L);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void remove_NullPointerException() {
+        //Assert
+        userService.removeUserById(null);
+        Mockito.verifyNoInteractions(userRepository);
+    }
+
 }
