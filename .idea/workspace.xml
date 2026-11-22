@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="еще несколько исправлений неверных типов для id">
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="UserService покрыт юнит-тестами">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/RepositoryIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/UserFindScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,61 +62,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5739025117445928E-23" />
-      <entry key="MS500" value="2.7503981402929498E-5" />
-      <entry key="S2" value="0.07250995115687861" />
-      <entry key="S5" value="0.394622635635126" />
-      <entry key="S10" value="0.9549754348558843" />
-      <entry key="S30" value="2.3798104347049636" />
-      <entry key="S60" value="3.601491290698816" />
-      <entry key="M2" value="5.626726272174512" />
-      <entry key="M5" value="10.951476687657644" />
-      <entry key="M10" value="22.484593167147306" />
-      <entry key="M15" value="36.07347613348659" />
-      <entry key="M30" value="75.01818953546297" />
-      <entry key="H1" value="136.7594910015665" />
-      <entry key="H2" value="220.8884197435705" />
-      <entry key="H4" value="311.7753491385761" />
-      <entry key="D1" value="628.6614940796918" />
-      <entry key="W1" value="1274.267153258189" />
+      <entry key="MS100" value="1.0000000000001994" />
+      <entry key="MS500" value="1.0028841177406627" />
+      <entry key="S2" value="1.273727923645084" />
+      <entry key="S5" value="1.9768787897824454" />
+      <entry key="S10" value="2.6601139647443857" />
+      <entry key="S30" value="3.4645253736466595" />
+      <entry key="S60" value="3.9617928518109755" />
+      <entry key="M2" value="5.43580156564314" />
+      <entry key="M5" value="14.353170808692177" />
+      <entry key="M10" value="30.746857477252618" />
+      <entry key="M15" value="45.10693173619961" />
+      <entry key="M30" value="82.32628645121207" />
+      <entry key="H1" value="148.45487001257618" />
+      <entry key="H2" value="251.73914717562138" />
+      <entry key="H4" value="374.00179853347424" />
+      <entry key="D1" value="749.3595453631691" />
+      <entry key="W1" value="1416.72668556814" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000001686600564" />
-      <entry key="MS500" value="1.0535779230913151" />
-      <entry key="S2" value="1.8306533574680555" />
-      <entry key="S5" value="2.849565558529128" />
-      <entry key="S10" value="3.636497095634335" />
-      <entry key="S30" value="4.56009902207482" />
-      <entry key="S60" value="5.6173762883831895" />
-      <entry key="M2" value="7.781065572071595" />
-      <entry key="M5" value="12.257011391954949" />
-      <entry key="M10" value="21.72292984264348" />
-      <entry key="M15" value="33.801544635601594" />
-      <entry key="M30" value="72.10871714809623" />
-      <entry key="H1" value="134.8154051642891" />
-      <entry key="H2" value="217.49148754889922" />
-      <entry key="H4" value="306.09136026571485" />
-      <entry key="D1" value="533.2136238701407" />
-      <entry key="W1" value="855.6031154608754" />
+      <entry key="MS100" value="8.560602747226905E-4" />
+      <entry key="MS500" value="0.2435010756824236" />
+      <entry key="S2" value="0.7120808346510685" />
+      <entry key="S5" value="1.0242802739262094" />
+      <entry key="S10" value="1.3267995218834447" />
+      <entry key="S30" value="1.732820807124802" />
+      <entry key="S60" value="2.155137245642704" />
+      <entry key="M2" value="3.9906165958534454" />
+      <entry key="M5" value="14.048991173492414" />
+      <entry key="M10" value="30.634757523812183" />
+      <entry key="M15" value="44.7690294858401" />
+      <entry key="M30" value="80.97732004326335" />
+      <entry key="H1" value="145.53193287109286" />
+      <entry key="H2" value="246.14032278181097" />
+      <entry key="H4" value="365.0201291848283" />
+      <entry key="D1" value="652.3598291235011" />
+      <entry key="W1" value="994.7785803243798" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4316870440601664E-4" />
-      <entry key="MS500" value="0.1851543398453444" />
-      <entry key="S2" value="1.2859317170611635" />
-      <entry key="S5" value="2.7969793302530492" />
-      <entry key="S10" value="4.272318934674604" />
-      <entry key="S30" value="6.778359146919138" />
-      <entry key="S60" value="9.108344926970465" />
-      <entry key="M2" value="13.325161771586844" />
-      <entry key="M5" value="23.149281818940512" />
-      <entry key="M10" value="44.1479902817418" />
-      <entry key="M15" value="69.81022637954338" />
-      <entry key="M30" value="147.0547799681717" />
-      <entry key="H1" value="271.5051062583923" />
-      <entry key="H2" value="438.3220767318368" />
-      <entry key="H4" value="617.8255951363071" />
-      <entry key="D1" value="1161.8620907005547" />
-      <entry key="W1" value="2129.8667894893033" />
+      <entry key="MS100" value="0.21464135912431678" />
+      <entry key="MS500" value="0.7437559818038906" />
+      <entry key="S2" value="1.4632082319132018" />
+      <entry key="S5" value="2.6425333444684314" />
+      <entry key="S10" value="3.7520480758564307" />
+      <entry key="S30" value="5.097790525630633" />
+      <entry key="S60" value="6.055960932322039" />
+      <entry key="M2" value="9.371770997589918" />
+      <entry key="M5" value="28.327129178482853" />
+      <entry key="M10" value="61.2947313384188" />
+      <entry key="M15" value="89.7863716134459" />
+      <entry key="M30" value="163.21609100830014" />
+      <entry key="H1" value="293.90598189009694" />
+      <entry key="H2" value="497.81072159788044" />
+      <entry key="H4" value="738.9710256473106" />
+      <entry key="D1" value="1401.7033534219527" />
+      <entry key="W1" value="2411.501291174716" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -137,6 +136,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndDeleteUser.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByAge.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByName.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidIdException.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidNameException.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndFindUser.executor": "Debug",
+    "JUnit.RepositryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndUpdateName.executor": "Run",
+    "JUnit.RepositryIntegrationTest.executor": "Run",
     "JUnit.UserDaoImplTest.executor": "Run",
     "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
     "JUnit.UserServiceTest.create_ShouldCreateAndReturnDto.executor": "Run",
@@ -203,8 +213,8 @@
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RepositoryIntegrationTest">
+    <configuration name="RepositoryIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -213,13 +223,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.find_InvalidEageException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -228,14 +238,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
-      <option name="METHOD_NAME" value="find_InvalidEageException" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndDeleteUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.find_findByAge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndFindManyByAge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -244,14 +254,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
-      <option name="METHOD_NAME" value="find_findByAge" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndFindManyByAge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.remove_InvalidIdException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.createAndFindManyByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -260,14 +270,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
-      <option name="METHOD_NAME" value="remove_InvalidIdException" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="createAndFindManyByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.remove_NullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryIntegrationTest.invalidNameException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
         <pattern>
@@ -276,8 +286,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.UserServiceTest" />
-      <option name="METHOD_NAME" value="remove_NullPointerException" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
+      <option name="METHOD_NAME" value="invalidNameException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -327,11 +337,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest.remove_InvalidIdException" />
-        <item itemvalue="JUnit.UserServiceTest.remove_NullPointerException" />
-        <item itemvalue="JUnit.UserServiceTest.find_InvalidEageException" />
-        <item itemvalue="JUnit.UserServiceTest.find_findByAge" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByAge" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByName" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndDeleteUser" />
+        <item itemvalue="JUnit.RepositoryIntegrationTest.invalidNameException" />
       </list>
     </recent_temporary>
   </component>
@@ -380,7 +390,8 @@
     <MESSAGE value="переделал проект на SpringBoot" />
     <MESSAGE value="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser" />
     <MESSAGE value="еще несколько исправлений неверных типов для id" />
-    <option name="LAST_COMMIT_MESSAGE" value="еще несколько исправлений неверных типов для id" />
+    <MESSAGE value="UserService покрыт юнит-тестами" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserService покрыт юнит-тестами" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
