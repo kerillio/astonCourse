@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="UserService покрыт юнит-тестами">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/RepositoryIntegrationTest.java" afterDir="false" />
+    <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="UserRepository покрыт интеграционными тестами">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Kafka/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Kafka/KafkaConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Kafka/KafkaProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,61 +66,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000001994" />
-      <entry key="MS500" value="1.0028841177406627" />
-      <entry key="S2" value="1.273727923645084" />
-      <entry key="S5" value="1.9768787897824454" />
-      <entry key="S10" value="2.6601139647443857" />
-      <entry key="S30" value="3.4645253736466595" />
-      <entry key="S60" value="3.9617928518109755" />
-      <entry key="M2" value="5.43580156564314" />
-      <entry key="M5" value="14.353170808692177" />
-      <entry key="M10" value="30.746857477252618" />
-      <entry key="M15" value="45.10693173619961" />
-      <entry key="M30" value="82.32628645121207" />
-      <entry key="H1" value="148.45487001257618" />
-      <entry key="H2" value="251.73914717562138" />
-      <entry key="H4" value="374.00179853347424" />
-      <entry key="D1" value="749.3595453631691" />
-      <entry key="W1" value="1416.72668556814" />
+      <entry key="MS100" value="1.1236672979047148E-107" />
+      <entry key="MS500" value="6.693693813219599E-22" />
+      <entry key="S2" value="8.59596222314134E-6" />
+      <entry key="S5" value="0.01685866202379797" />
+      <entry key="S10" value="0.26483160175634246" />
+      <entry key="S30" value="2.427631370795281" />
+      <entry key="S60" value="6.005390715601488" />
+      <entry key="M2" value="12.106703650214488" />
+      <entry key="M5" value="23.149730387970582" />
+      <entry key="M10" value="37.383832805490954" />
+      <entry key="M15" value="51.23950766586973" />
+      <entry key="M30" value="89.75455365429886" />
+      <entry key="H1" value="158.41663466304317" />
+      <entry key="H2" value="266.27729328337034" />
+      <entry key="H4" value="395.65533131414776" />
+      <entry key="D1" value="785.1974172964817" />
+      <entry key="W1" value="1457.801408826685" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="8.560602747226905E-4" />
-      <entry key="MS500" value="0.2435010756824236" />
-      <entry key="S2" value="0.7120808346510685" />
-      <entry key="S5" value="1.0242802739262094" />
-      <entry key="S10" value="1.3267995218834447" />
-      <entry key="S30" value="1.732820807124802" />
-      <entry key="S60" value="2.155137245642704" />
-      <entry key="M2" value="3.9906165958534454" />
-      <entry key="M5" value="14.048991173492414" />
-      <entry key="M10" value="30.634757523812183" />
-      <entry key="M15" value="44.7690294858401" />
-      <entry key="M30" value="80.97732004326335" />
-      <entry key="H1" value="145.53193287109286" />
-      <entry key="H2" value="246.14032278181097" />
-      <entry key="H4" value="365.0201291848283" />
-      <entry key="D1" value="652.3598291235011" />
-      <entry key="W1" value="994.7785803243798" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000003777105" />
+      <entry key="S2" value="1.0044084890924185" />
+      <entry key="S5" value="1.1142746282592642" />
+      <entry key="S10" value="1.3509526218682675" />
+      <entry key="S30" value="2.4856154495969447" />
+      <entry key="S60" value="4.996357846279773" />
+      <entry key="M2" value="9.48988485441168" />
+      <entry key="M5" value="17.03733851380536" />
+      <entry key="M10" value="27.735628075033222" />
+      <entry key="M15" value="39.494735120487626" />
+      <entry key="M30" value="74.59605435524126" />
+      <entry key="H1" value="140.08488066288902" />
+      <entry key="H2" value="244.31784203319245" />
+      <entry key="H4" value="369.69850961519" />
+      <entry key="D1" value="671.197709016559" />
+      <entry key="W1" value="1018.4339764309955" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.21464135912431678" />
-      <entry key="MS500" value="0.7437559818038906" />
-      <entry key="S2" value="1.4632082319132018" />
-      <entry key="S5" value="2.6425333444684314" />
-      <entry key="S10" value="3.7520480758564307" />
-      <entry key="S30" value="5.097790525630633" />
-      <entry key="S60" value="6.055960932322039" />
-      <entry key="M2" value="9.371770997589918" />
-      <entry key="M5" value="28.327129178482853" />
-      <entry key="M10" value="61.2947313384188" />
-      <entry key="M15" value="89.7863716134459" />
-      <entry key="M30" value="163.21609100830014" />
-      <entry key="H1" value="293.90598189009694" />
-      <entry key="H2" value="497.81072159788044" />
-      <entry key="H4" value="738.9710256473106" />
-      <entry key="D1" value="1401.7033534219527" />
-      <entry key="W1" value="2411.501291174716" />
+      <entry key="MS100" value="0.01030865555291324" />
+      <entry key="MS500" value="0.40053493879481106" />
+      <entry key="S2" value="0.7956020033075525" />
+      <entry key="S5" value="0.9487919113104089" />
+      <entry key="S10" value="1.366828287292177" />
+      <entry key="S30" value="4.671496074148343" />
+      <entry key="S60" value="10.791892473576139" />
+      <entry key="M2" value="21.421019570650294" />
+      <entry key="M5" value="40.06903121790685" />
+      <entry key="M10" value="65.02761277121522" />
+      <entry key="M15" value="90.64796041387973" />
+      <entry key="M30" value="164.26777702297952" />
+      <entry key="H1" value="298.42287158949796" />
+      <entry key="H2" value="510.5264862963608" />
+      <entry key="H4" value="765.3020698105115" />
+      <entry key="D1" value="1456.3786383781116" />
+      <entry key="W1" value="2476.231327576329" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -136,6 +140,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "JUnit.RepositoryIntegrationTest.createAndDeleteUser.executor": "Run",
     "JUnit.RepositoryIntegrationTest.createAndFindManyByAge.executor": "Run",
     "JUnit.RepositoryIntegrationTest.createAndFindManyByName.executor": "Run",
@@ -213,7 +218,7 @@
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RepositoryIntegrationTest">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="RepositoryIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
@@ -277,22 +282,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RepositoryIntegrationTest.invalidNameException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="astonCourse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Step2.Module2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Step2.Module2" />
-      <option name="MAIN_CLASS_NAME" value="Step2.Module2.RepositoryIntegrationTest" />
-      <option name="METHOD_NAME" value="invalidNameException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -335,13 +324,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.RepositoryIntegrationTest" />
         <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByAge" />
         <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByName" />
         <item itemvalue="JUnit.RepositoryIntegrationTest.createAndDeleteUser" />
-        <item itemvalue="JUnit.RepositoryIntegrationTest.invalidNameException" />
       </list>
     </recent_temporary>
   </component>
@@ -391,7 +392,8 @@
     <MESSAGE value="исправил ошибки&#10;переписал неверные типы данных&#10;покрыл тестами addUser и updateUser" />
     <MESSAGE value="еще несколько исправлений неверных типов для id" />
     <MESSAGE value="UserService покрыт юнит-тестами" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserService покрыт юнит-тестами" />
+    <MESSAGE value="UserRepository покрыт интеграционными тестами" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserRepository покрыт интеграционными тестами" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
