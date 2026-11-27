@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3abc8a98-bde7-4749-92a5-40f97a4d5931" name="Changes" comment="рабочая версия с интеграцей smtp">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/DTO/EmailMessageDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/EmailProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Step2/Module2/SmtpIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/CreateUserScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Step2/Module2/UI/RemoveUserScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Step2.Build_by_SpringBoot" />
+        <entry key="$PROJECT_DIR$" value="Step2.kafka_implementation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,61 +62,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1236672979047148E-107" />
-      <entry key="MS500" value="6.693693813219599E-22" />
-      <entry key="S2" value="8.59596222314134E-6" />
-      <entry key="S5" value="0.01685866202379797" />
-      <entry key="S10" value="0.26483160175634246" />
-      <entry key="S30" value="2.427631370795281" />
-      <entry key="S60" value="6.005390715601488" />
-      <entry key="M2" value="12.106703650214488" />
-      <entry key="M5" value="23.149730387970582" />
-      <entry key="M10" value="37.383832805490954" />
-      <entry key="M15" value="51.23950766586973" />
-      <entry key="M30" value="89.75455365429886" />
-      <entry key="H1" value="158.41663466304317" />
-      <entry key="H2" value="266.27729328337034" />
-      <entry key="H4" value="395.65533131414776" />
-      <entry key="D1" value="785.1974172964817" />
-      <entry key="W1" value="1457.801408826685" />
+      <entry key="MS100" value="1.000000000000001" />
+      <entry key="MS500" value="1.0010054102377286" />
+      <entry key="S2" value="1.178143324086411" />
+      <entry key="S5" value="1.5439026209008517" />
+      <entry key="S10" value="2.1020532424075498" />
+      <entry key="S30" value="3.7187538103200564" />
+      <entry key="S60" value="4.644058324304367" />
+      <entry key="M2" value="5.256834538481601" />
+      <entry key="M5" value="5.685347690501391" />
+      <entry key="M10" value="5.839617412356969" />
+      <entry key="M15" value="5.89242185899798" />
+      <entry key="M30" value="5.981089119471001" />
+      <entry key="H1" value="7.77712786326889" />
+      <entry key="H2" value="30.36777680702535" />
+      <entry key="H4" value="124.71892107993862" />
+      <entry key="D1" value="668.0522002538868" />
+      <entry key="W1" value="1457.783206073252" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000003777105" />
-      <entry key="S2" value="1.0044084890924185" />
-      <entry key="S5" value="1.1142746282592642" />
-      <entry key="S10" value="1.3509526218682675" />
-      <entry key="S30" value="2.4856154495969447" />
-      <entry key="S60" value="4.996357846279773" />
-      <entry key="M2" value="9.48988485441168" />
-      <entry key="M5" value="17.03733851380536" />
-      <entry key="M10" value="27.735628075033222" />
-      <entry key="M15" value="39.494735120487626" />
-      <entry key="M30" value="74.59605435524126" />
-      <entry key="H1" value="140.08488066288902" />
-      <entry key="H2" value="244.31784203319245" />
-      <entry key="H4" value="369.69850961519" />
-      <entry key="D1" value="671.197709016559" />
-      <entry key="W1" value="1018.4339764309955" />
+      <entry key="MS100" value="3.830022464156425E-9" />
+      <entry key="MS500" value="0.02076942696353263" />
+      <entry key="S2" value="0.5316150642996579" />
+      <entry key="S5" value="1.9390661848465807" />
+      <entry key="S10" value="3.987373467878166" />
+      <entry key="S30" value="7.536040469130376" />
+      <entry key="S60" value="9.055565044265006" />
+      <entry key="M2" value="9.966758602462642" />
+      <entry key="M5" value="10.57089355222584" />
+      <entry key="M10" value="10.782707625967808" />
+      <entry key="M15" value="10.854537193180732" />
+      <entry key="M30" value="10.943947232177958" />
+      <entry key="H1" value="12.115732848920645" />
+      <entry key="H2" value="30.50415989416904" />
+      <entry key="H4" value="114.48975653259639" />
+      <entry key="D1" value="563.2910726319454" />
+      <entry key="W1" value="1015.813671037535" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.01030865555291324" />
-      <entry key="MS500" value="0.40053493879481106" />
-      <entry key="S2" value="0.7956020033075525" />
-      <entry key="S5" value="0.9487919113104089" />
-      <entry key="S10" value="1.366828287292177" />
-      <entry key="S30" value="4.671496074148343" />
-      <entry key="S60" value="10.791892473576139" />
-      <entry key="M2" value="21.421019570650294" />
-      <entry key="M5" value="40.06903121790685" />
-      <entry key="M10" value="65.02761277121522" />
-      <entry key="M15" value="90.64796041387973" />
-      <entry key="M30" value="164.26777702297952" />
-      <entry key="H1" value="298.42287158949796" />
-      <entry key="H2" value="510.5264862963608" />
-      <entry key="H4" value="765.3020698105115" />
-      <entry key="D1" value="1456.3786383781116" />
-      <entry key="W1" value="2476.231327576329" />
+      <entry key="MS100" value="6.9719980944766055E-6" />
+      <entry key="MS500" value="0.10042474155456815" />
+      <entry key="S2" value="1.0795615066586657" />
+      <entry key="S5" value="2.959895867509317" />
+      <entry key="S10" value="5.631302952089453" />
+      <entry key="S30" value="10.973284536515708" />
+      <entry key="S60" value="13.52862528239414" />
+      <entry key="M2" value="15.128700380569214" />
+      <entry key="M5" value="16.21574312977295" />
+      <entry key="M10" value="16.60162604058096" />
+      <entry key="M15" value="16.733057597815936" />
+      <entry key="M30" value="16.91799578006736" />
+      <entry key="H1" value="19.888412536207987" />
+      <entry key="H2" value="60.86391141250524" />
+      <entry key="H4" value="239.19239237580985" />
+      <entry key="D1" value="1231.32927219883" />
+      <entry key="W1" value="2473.5928153586033" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -139,93 +133,94 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.createAndDeleteUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.createAndFindManyByAge.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.createAndFindManyByName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.createAndUpdateEmail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.invalidIdException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositoryIntegrationTest.invalidNameException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositryIntegrationTest.createAndFindUser.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RepositryIntegrationTest.createAndUpdateEmail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositryIntegrationTest.createAndUpdateName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RepositryIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveAndFindUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.create_ShouldCreateAndReturnDto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.emptyNameReturnEmptyOptional.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_IncorrectEmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_InvalidEageException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_InvalidEmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_InvalidNameException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_findAll.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_findByAge.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_findByEmail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_findById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.find_findByName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.incorrectAge_ReturnEmptyOptional.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.remove_InvalidIdException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.remove_NullPointerException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_EmptyEmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_EmptyNameException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_InvalidAgeException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_InvalidEmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_UpdateEmailReturnNewDto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.update_UpdateNameReturnNewDto.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserDaoImplTest.saveAndUpdateUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [process-test-classes].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.astonCourse [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Step2.kafka__implementation&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;F:/IdeaProjects/astonCourse/src/main/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndDeleteUser.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByAge.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndFindManyByName.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidIdException.executor": "Run",
+    "JUnit.RepositoryIntegrationTest.invalidNameException.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndFindUser.executor": "Debug",
+    "JUnit.RepositryIntegrationTest.createAndUpdateEmail.executor": "Run",
+    "JUnit.RepositryIntegrationTest.createAndUpdateName.executor": "Run",
+    "JUnit.RepositryIntegrationTest.executor": "Run",
+    "JUnit.SmtpIntegrationTest.executor": "Run",
+    "JUnit.UserDaoImplTest.executor": "Run",
+    "JUnit.UserDaoImplTest.saveAndFindUser.executor": "Run",
+    "JUnit.UserServiceTest.create_ShouldCreateAndReturnDto.executor": "Run",
+    "JUnit.UserServiceTest.emptyNameReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.find_IncorrectEmailException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidEageException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidEmailException.executor": "Run",
+    "JUnit.UserServiceTest.find_InvalidNameException.executor": "Run",
+    "JUnit.UserServiceTest.find_findAll.executor": "Run",
+    "JUnit.UserServiceTest.find_findByAge.executor": "Run",
+    "JUnit.UserServiceTest.find_findByEmail.executor": "Run",
+    "JUnit.UserServiceTest.find_findById.executor": "Run",
+    "JUnit.UserServiceTest.find_findByName.executor": "Run",
+    "JUnit.UserServiceTest.incorrectAge_ReturnEmptyOptional.executor": "Run",
+    "JUnit.UserServiceTest.remove_InvalidIdException.executor": "Run",
+    "JUnit.UserServiceTest.remove_NullPointerException.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyEmailException.executor": "Run",
+    "JUnit.UserServiceTest.update_EmptyNameException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidAgeException.executor": "Run",
+    "JUnit.UserServiceTest.update_InvalidEmailException.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateEmailReturnNewDto.executor": "Run",
+    "JUnit.UserServiceTest.update_UpdateNameReturnNewDto.executor": "Run",
+    "Maven.Main.executor": "Run",
+    "Maven.UserDaoImplTest.executor": "Run",
+    "Maven.UserDaoImplTest.saveAndUpdateUser.executor": "Run",
+    "Maven.UserServiceTest.executor": "Run",
+    "Maven.astonCourse [clean].executor": "Run",
+    "Maven.astonCourse [compile].executor": "Run",
+    "Maven.astonCourse [deploy].executor": "Run",
+    "Maven.astonCourse [process-test-classes].executor": "Run",
+    "Maven.astonCourse [test].executor": "Run",
+    "Maven.astonCourse [validate].executor": "Run",
+    "Maven.astonCourse [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Main.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "Step2.kafka__implementation",
+    "git.auto.fetch.suggestion.counter": "2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "F:/IdeaProjects/astonCourse/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "Docker"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\IdeaProjects\astonCourse\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.SmtpIntegrationTest">
     <configuration name="RepositoryIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="astonCourse" />
       <extension name="coverage">
@@ -289,6 +284,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SmtpIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="astonCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Step2.Module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Step2.Module2" />
+      <option name="MAIN_CLASS_NAME" value="Step2.Module2.SmtpIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -347,11 +357,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SmtpIntegrationTest" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.RepositoryIntegrationTest" />
         <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByAge" />
         <item itemvalue="JUnit.RepositoryIntegrationTest.createAndFindManyByName" />
-        <item itemvalue="JUnit.RepositoryIntegrationTest.createAndDeleteUser" />
       </list>
     </recent_temporary>
   </component>
