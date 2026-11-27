@@ -25,6 +25,7 @@ public class RemoveUserScreen implements Screen {
                 {
                     success = true;
                     context.getBean(UserService.class).removeUserById(userId);
+                    System.out.println("User deleted successfully \n");
                 }
 
             } catch(InputMismatchException e) {

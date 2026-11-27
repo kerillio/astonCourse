@@ -19,10 +19,12 @@ public class UserService {
 
     private final UserRepository userRepository;
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
+    private final EmailProducerService emailProducerService;
 
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, EmailProducerService emailProducerService) {
         this.userRepository = userRepository;
+        this.emailProducerService = emailProducerService;
     }
 
 
@@ -37,6 +39,11 @@ public class UserService {
         } else {
             User savedUser = dto.toEntity();
             userRepository.save(savedUser);
+            emailProducerService.sendEmailNotification(
+                    dto.email(),
+                    "Ваш аккаунт успешно создан",
+                    dto.name() + ", ваш аккаунт был успешно создан"
+            );
             return Optional.of(UserViewDto.fromEntity(savedUser));
         }
         return Optional.empty();
@@ -65,7 +72,17 @@ public class UserService {
     public void removeUserById(Long id) {
         if (id != null){
             if (id > 0) {
-                userRepository.deleteById(id);
+                Optional<User> user = userRepository.findById(id);
+                if (user.isPresent()) {
+                    UserViewDto dto = UserViewDto.fromEntity(user.get());
+                    userRepository.deleteById(id);
+                    emailProducerService.sendEmailNotification(
+                            dto.email(),
+                            "Удаление аккаунта",
+                            dto.name() + ", Ваш аккаунт был удален."
+                    );
+                }
+
             }
         }
     }
