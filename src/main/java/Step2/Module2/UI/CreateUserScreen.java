@@ -19,7 +19,7 @@ public class CreateUserScreen implements Screen {
         UserCreateDto dto = UserReader.readByConsole();
         Optional<UserViewDto> savedUser = context.getBean("userService", UserService.class).addUser(dto);
         if (savedUser.isPresent()) {
-            System.out.printf("Пользователь " + savedUser.get().name() + " сохранён");
+            System.out.println("Пользователь " + savedUser.get().name() + " сохранён");
         } else {
             System.out.printf("Не удалось сохранить пользователя");
         }
